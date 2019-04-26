@@ -1,12 +1,14 @@
 import { 
     FETCH_MOM_EXPERIENCES_SUCCESS, FETCH_MOM_EXPERIENCES_FAIL
 } from '../actions'
+import {
+    FETCHING_EVENT, GET_EVENT, ADD_EVENT
+  } from '../actions';
 
 const initialstate ={
     momExperiences: [],
     error: ''
 }
-
 
 export const reducer = (state = initialstate, action) =>{
     switch (action.type){
@@ -25,3 +27,41 @@ export const reducer = (state = initialstate, action) =>{
     }
 
 }
+
+
+
+  
+  const initialState = {
+    event: [],
+    fetchingEvent: false,
+    fetchedEvent: true,
+    addingEvent: false,
+    updatingEvent: false,
+    deletingEvent: false,
+    error: null
+  }
+  
+  export const eventReducer = (state = initialState, action) => {
+    switch(action.type) {
+      case FETCHING_EVENT:
+      return Object.assign({}, state, {
+        fetchingEvent: true,
+        fetchedEvent: false,
+        addingEvent: true
+      });
+      case GET_EVENT:
+      return Object.assign({}, state, {
+        fetchingEvent: false,
+        fetchedEvent: true,
+        addingEvent: false,
+        event: action.payload
+      });
+      case ADD_EVENT:
+      return Object.assign({}, state, {
+        addingEvent: true
+      })
+      default:
+      return state;
+    }
+  }
+  
