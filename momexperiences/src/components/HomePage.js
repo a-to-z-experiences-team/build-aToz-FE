@@ -2,6 +2,8 @@ import React from 'react';
 import {experienceSuccessFetch} from '../actions/index';
 import {connect} from 'react-redux';
 import CardEvents from './CardEvents';
+import LoginForm from './LoginForm';
+import {Route} from 'react-router-dom'
 
 class HomePage extends React.Component {
     componentDidMount(){
@@ -17,7 +19,8 @@ class HomePage extends React.Component {
         return (
             <>
                 <h1> Mom's Life</h1>
-                <button> Join the Mom Squad </button>  
+                {/* // <button> <LoginForm /> </button>   */}
+                <Route path='/login' component={LoginForm} />
                 <div>
                     <CardEvents />
                 </div>
