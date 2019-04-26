@@ -2,11 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { login } from "../actions";
 
-class LoginForm extends Component {
+class LoginForm extends React.Component {
   state = {
+    credentials: {
     username: "",
-    password: ""
+    password: ""}
   };
+  
   login = event => {
     event.preventDefault();
     this.props.login(this.state.credentials).then(() => {
