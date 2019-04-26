@@ -1,0 +1,76 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.NavigationBar {
+  margin: 0 0 15px 0;
+}
+
+
+
+.navLeftContent {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navButtonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.LoginButton {
+  margin: 10px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.carouselItem {
+  height: 100vh;
+}
+
+.viewAllContainer {
+  margin: 15px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.momSquadButton{
+  display: flex;
+  justify-content: center;
+}
+.navLinks {
+  color: #cccccc;
+}
+
+.navLinks:hover {
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbarContent, .navButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .links,
+  .navLeftContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  button {
+    width: 300px;
+  }
+  .viewAllContainer {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+  }
+}

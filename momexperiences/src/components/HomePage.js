@@ -1,7 +1,10 @@
 import React from 'react';
 import {experienceSuccessFetch} from '../actions/index';
 import {connect} from 'react-redux';
-import CardEvents from './CardEvents';
+import Cards from './Cards';
+import Carousel from './Carousel';
+import FeaturedContent from './FeaturedContent';
+import NavBar from './NavBar';
 import LoginForm from './LoginForm';
 import {Route} from 'react-router-dom'
 
@@ -18,12 +21,10 @@ class HomePage extends React.Component {
         console.log(this.props.momExperiences)
         return (
             <>
-                <h1> Mom's Life</h1>
-                {/* // <button> <LoginForm /> </button>   */}
-                <Route path='/login' component={LoginForm} />
-                <div>
-                    <CardEvents />
-                </div>
+                <NavBar />
+                <Carousel />
+                <FeaturedContent />
+                <Cards />
             </>
         )
     }
