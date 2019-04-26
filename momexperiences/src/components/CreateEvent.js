@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getEvent, postEvent } from "../actions";
+import NavBar from './NavBar';
 
 class CreateEvent extends Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class CreateEvent extends Component {
   render() {
     return (
       <div>
+      <NavBar />
         <form onSubmit={this.addEvent}>
           <input
             onChange={this.handleChange}
