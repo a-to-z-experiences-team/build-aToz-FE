@@ -7,11 +7,7 @@
   margin: 0 0 15px 0;
 }
 
-.navbarContent {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
+
 
 .navLeftContent {
   display: flex;
@@ -45,6 +41,10 @@
   justify-content: flex-start;
 }
 
+.momSquadButton{
+  display: flex;
+  justify-content: center;
+}
 .navLinks {
   color: #cccccc;
 }
@@ -54,7 +54,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .navbarContent {
+  .navbarContent, .navButtonContainer {
     display: flex;
     flex-direction: column;
     align-items: center;

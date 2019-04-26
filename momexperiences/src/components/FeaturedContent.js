@@ -14,7 +14,9 @@ const FeaturedContent = () => {
           with cloth diapers, to outings with other children. Don't see an event
           you are looking for? Create one!
         </Card.Text>
-        <Button variant="danger">Join the Mom Squad</Button>
+        <div className = 'momSquadButton'> 
+        <Button variant="danger" >Join the Mom Squad</Button>
+        </div>
       </Card.Body>
     </Card>
   );

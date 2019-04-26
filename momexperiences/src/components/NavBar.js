@@ -29,7 +29,7 @@ class NavBar extends React.Component {
             <Button className="LoginButton" variant="outline-light">
               Sign Up
             </Button>
-            <Button className="LoginButton" v variant="outline-light">
+            <Button className="LoginButton" variant="outline-light">
               Login
             </Button>
           </div>
