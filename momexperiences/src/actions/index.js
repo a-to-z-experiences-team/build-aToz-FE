@@ -1,15 +1,16 @@
-import axios from 'axios';
+import axios from "axios";
 
-export const FETCH_MOM_EXPERIENCES_SUCCESS = 'FETCH_MOM_EXPERIENCES_SUCCESS'
-export const FETCH_MOM_EXPERIENCES_FAIL = 'FETCH_MOM_EXPERIENCES_FAIL'
+export const FETCH_MOM_EXPERIENCES_SUCCESS = "FETCH_MOM_EXPERIENCES_SUCCESS";
+export const FETCH_MOM_EXPERIENCES_FAIL = "FETCH_MOM_EXPERIENCES_FAIL";
 
-
-export const experienceSuccessFetch =  () => dispatch => {
-    axios
+export const experienceSuccessFetch = () => dispatch => {
+  axios
     .get("https://jsonplaceholder.typicode.com/comments")
-    .then(res => dispatch({ type: FETCH_MOM_EXPERIENCES_SUCCESS, payload: res.data}))
-    .catch(err => dispatch({type: FETCH_MOM_EXPERIENCES_FAIL, payload: err}))
-}
+    .then(res =>
+      dispatch({ type: FETCH_MOM_EXPERIENCES_SUCCESS, payload: res.data })
+    )
+    .catch(err => dispatch({ type: FETCH_MOM_EXPERIENCES_FAIL, payload: err }));
+};
 
 
 export const LOGIN_START = "LOGIN_START";
@@ -31,4 +32,30 @@ export const login = credentials => dispatch => {
       }
       dispatch({ type: LOGIN_FAILURE, payload: err.response.message });
     });
+};
+
+
+export const FETCHING_EVENT = "FETCHING_EVENT";
+export const GET_EVENT = "GET_EVENT";
+export const ADD_EVENT = "ADD_EVENT";
+
+export const getEvent = () => {
+  const promise = axios.get("http://localhost:5000/api/login");
+
+  return function(dispatch) {
+    dispatch({ type: FETCHING_EVENT });
+    promise.then(response => {
+      console.log(response);
+      dispatch({ type: GET_EVENT, payload: response.data });
+    });
+  };
+};
+
+export const postEvent = event => {
+  return function(dispatch) {
+    dispatch({ type: ADD_EVENT });
+    axios.post("http://localhost:5000/api/login", event).then(response => {
+      dispatch(getEvent());
+    });
+  };
 };
