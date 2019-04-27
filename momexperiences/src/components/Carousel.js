@@ -1,16 +1,18 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
+
+
 class CarouselHomePage extends React.Component {
 
   render() {
     return (
       <>
-        <Carousel>
-          <Carousel.Item>
+        <Carousel >
+          <Carousel.Item >
             <img
-              className="d-block w-100"
-              src="https://images.pexels.com/photos/1832097/pexels-photo-1832097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              className="d-block"
+              src={require ('../imgs/TreeHug.jpg')}
               alt="First slide"
             />
             <Carousel.Caption>
@@ -19,8 +21,8 @@ class CarouselHomePage extends React.Component {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block w-100"
-              src="https://images.pexels.com/photos/1588080/pexels-photo-1588080.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              className="d-block "
+              src={require ('../imgs/ColorRun.jpg')}
               alt="Third slide"
             />
 
@@ -30,8 +32,8 @@ class CarouselHomePage extends React.Component {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block w-100"
-              src="https://images.pexels.com/photos/1683975/pexels-photo-1683975.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              className="d-block "
+              src={require ('../imgs/Sunset.jpg')}
               alt="Third slide"
             />
 

@@ -33,8 +33,9 @@ class CreateEvent extends Component {
 
   render() {
     return (
-      <div>
+      <>
       <NavBar />
+      <div > 
         <form onSubmit={this.addEvent}>
           <input
             onChange={this.handleChange}
@@ -75,6 +76,7 @@ class CreateEvent extends Component {
           <button type="submit">Create Event</button>
         </form>
       </div>
+      </>
     );
   }
 }
