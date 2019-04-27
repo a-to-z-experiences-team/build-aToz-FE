@@ -35,6 +35,25 @@
   height: 100vh;
 }
 
+.profilePhoto {
+  width: 15em;
+  border-radius: 75%;
+  border: 3px solid white;
+  box-shadow: 3px 3px 3px black;
+  margin: 20px;
+}
+
+.profileName {
+  display: flex;
+  justify-content: center;
+}
+
+.profileContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 50px 0;
+}
 .viewAllContainer {
   margin: 15px;
   display: flex;
@@ -53,8 +72,18 @@
   color: white;
 }
 
-@media only screen and (max-width: 600px) {
-  .navbarContent, .navButtonContainer {
+
+@media only screen and (max-width: 1260px) {
+  .w-100 {
+    height: auto;
+  }
+  .carousel-caption,
+  .carousel-indicators {
+    bottom: 0;
+  }
+}
+@media only screen and (max-width: 574px) {
+  .navbarContent {
     display: flex;
     flex-direction: column;
     align-items: center;

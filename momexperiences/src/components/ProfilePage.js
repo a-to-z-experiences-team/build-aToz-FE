@@ -1,37 +1,56 @@
 import React from "react";
 import "../styles.css";
-import { Card } from "react-bootstrap";
+import { connect } from "react-redux";
+import { Card, Button } from "react-bootstrap";
+import {experienceSuccessFetch} from '../actions/index';
 import NavBar from './NavBar';
 
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { show: true };
+    this.state = { };
   }
+
+  componentDidMount(){
+    this.props.experienceSuccessFetch()
+    
+}
 
   render() {
     return (
       <>
         <NavBar />
-        <Card style={{ width: '18rem' }}>
-        <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-            <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
-            </Card.Text>
-            <Card.Link href="#">Card Link</Card.Link>
-            <Card.Link href="#">Another Link</Card.Link>
-        </Card.Body>
-        </Card>;
+          <div className = 'profileContainer'> 
+          <img src = 'https://images.pexels.com/photos/698877/pexels-photo-698877.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' className = 'profilePhoto'alt = 'User Profile Image'/>
+          <Card>
+          <Card.Header className='profileName' as="h5">Ann Smith</Card.Header>
+          <Card.Body>
+          <Card.Title>Hobbies</Card.Title>
+          <Card.Text>
+          Enjoy spending time with my little one, and teaching him via creative and educational activities.
+          </Card.Text>
+          <Card.Title>Location</Card.Title>
+          <Card.Text>
+          Upper West side of the city of Petaluma, CA.
+          </Card.Text>
+          </Card.Body>
+          </Card>
+          </div>
       </>
     );
   }
 }
 
-export default ProfilePage;
+const mapStateToProps = state => ({
+  momExperiences: state.momExperiences
+})
+
+export default connect(
+  mapStateToProps,
+  {experienceSuccessFetch}
+)(ProfilePage);
+
 
 
 
