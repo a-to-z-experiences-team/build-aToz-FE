@@ -14,7 +14,12 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-        <Navbar bg="danger" variant="dark" className="navbarContent">
+        <Navbar bg="danger" variant="dark" className="navbarContent" 
+    style = {{
+    display: 'flex',
+    justifyContent: 'space-around'
+    }}
+>
           <div className="navLeftContent">
             <Navbar.Brand href="/">Logo</Navbar.Brand>
             <Nav.Link className="navLinks" href="#TopEvents">
@@ -26,16 +31,15 @@ class NavBar extends React.Component {
             <Nav.Link className="navLinks" href="/CreateEvent">
               Create Event
             </Nav.Link>
-            
             <Nav.Link className="navLinks"  href= '/ProfilePage' >
               Profile
             </Nav.Link>
           </div>
           <div className ='navButtonContainer'>
-            <Button className="LoginButton" variant="outline-light">
+            <Button className="navButton" variant="outline-light">
             Sign Up
             </Button>
-            <Button className="LoginButton" variant="outline-light" href = '/LoginForm'>
+            <Button className="navButton" variant="outline-light" href = '/LoginForm'>
               Login
             </Button>
           </div>

@@ -7,7 +7,10 @@
   margin: 0 0 15px 0;
 }
 
-
+.navbarContent {
+  display: flex;
+  justify-content: space-between;
+}
 
 .navLeftContent {
   display: flex;
@@ -20,7 +23,7 @@
   justify-content: flex-end;
 }
 
-.LoginButton {
+.navButton {
   margin: 10px;
 }
 
@@ -37,7 +40,7 @@
 
 .profilePhoto {
   width: 15em;
-  border-radius: 75%;
+  border-radius: 15%;
   border: 3px solid white;
   box-shadow: 3px 3px 3px black;
   margin: 20px;
@@ -88,23 +91,24 @@
   }
 }
 @media only screen and (max-width: 574px) {
-  .navbarContent {
+  nav.navbarContent.navbar.navbar-expand  {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .links,
+  .navButtonContainer,
   .navLeftContent {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  button {
+  button, .navButton {
     width: 300px;
   }
   .viewAllContainer {
     margin: 15px;
     display: flex;
     justify-content: center;
+
   }
 }
