@@ -1,6 +1,8 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
+
+
 class CarouselHomePage extends React.Component {
 
   render() {
@@ -10,7 +12,7 @@ class CarouselHomePage extends React.Component {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://images.pexels.com/photos/1832097/pexels-photo-1832097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              src={require ('../imgs/ColorRun.jpg')}
               alt="First slide"
             />
             <Carousel.Caption>

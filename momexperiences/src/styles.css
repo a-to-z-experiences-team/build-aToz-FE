@@ -80,9 +80,6 @@
   color: white;
 }
 
-.d-block, .w-100 {
-  height: 33.5em;
-}
 
 .buttonsBelowSearchBar {
   margin: 15px;
@@ -94,10 +91,24 @@
   flex-wrap: wrap;
   
 }
-
 .cardData{
   margin: 10px;
 }
+
+.login-page-wrapper {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15em;
+}
+
+Form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 @media only screen and (max-width: 803px) {
   .d-block, .w-100 {

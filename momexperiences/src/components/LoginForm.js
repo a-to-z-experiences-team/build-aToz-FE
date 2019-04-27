@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { login } from "../actions";
 import NavBar from './NavBar';
+import {Form, Button} from 'react-bootstrap';
 
 class LoginForm extends React.Component {
   state = {
@@ -12,9 +13,7 @@ class LoginForm extends React.Component {
   
   login = event => {
     event.preventDefault();
-    this.props.login(this.state.credentials).then(() => {
-      this.props.history.push("/experiencelist");
-    });
+    console.log(this.state.credentials)
   };
   handleChange = event => {
     this.setState({
@@ -29,28 +28,35 @@ class LoginForm extends React.Component {
     return (
       <>
       <NavBar />
+      
         <div className="login-page-wrapper">
+        <h2>Login</h2>
+        <Form onSubmit={this.login} className ='loginForm'>
+        <Form.Group controlId="formBasicEmail" >
+          <Form.Label>Username</Form.Label>
+          <Form.Control               
+            type="text"
+            name="username"
+            placeholder="username"
+            value={this.state.credentials.username}
+            onChange={this.handleChange}
+            required/>
+        </Form.Group>
 
-          <h2>Login</h2>
-          <form onSubmit={this.login}>
-            <input
-              type="text"
-              name="username"
-              placeholder="username"
-              value={this.state.credentials.username}
-              onChange={this.handleChange}
-              required
-            />
-            <input
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control               
               type="password"
               name="password"
               placeholder="password"
               value={this.state.credentials.password}
               onChange={this.handleChange}
-              required
-            />
-            <button value="isLoggingIn">submit</button>
-          </form>
+              required />
+        </Form.Group>
+        <Button variant="danger" type="submit">
+          Submit
+        </Button>
+        </Form>
         </div>
       </>
     );
