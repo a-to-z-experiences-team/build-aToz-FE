@@ -43,6 +43,11 @@
   margin: 20px;
 }
 
+.searchExperiences{
+  border-radius: 3.5px;
+  padding-left: 10px;
+  
+}
 .profileName {
   display: flex;
   justify-content: center;
