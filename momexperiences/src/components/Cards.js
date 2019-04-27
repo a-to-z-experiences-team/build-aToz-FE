@@ -3,14 +3,12 @@ import "../styles.css";
 import { CardDeck, Card, Button } from "react-bootstrap";
 
 class Cards extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <>
         <div className="viewAllContainer">
-          <Button variant="outline-danger">View All</Button>
+          <input  placeholder= 'Search Experiences' className='searchExperiences'></input>
+          
         </div>
         <CardDeck>
           <Card>

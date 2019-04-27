@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { login } from "../actions";
+import NavBar from './NavBar';
 
 class LoginForm extends React.Component {
   state = {
@@ -26,28 +27,32 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-page-wrapper">
-        <h2>Login</h2>
-        <form onSubmit={this.login}>
-          <input
-            type="text"
-            name="username"
-            placeholder="username"
-            value={this.state.credentials.username}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="password"
-            value={this.state.credentials.password}
-            onChange={this.handleChange}
-            required
-          />
-          <button value="isLoggingIn">submit</button>
-        </form>
-      </div>
+      <>
+      <NavBar />
+        <div className="login-page-wrapper">
+
+          <h2>Login</h2>
+          <form onSubmit={this.login}>
+            <input
+              type="text"
+              name="username"
+              placeholder="username"
+              value={this.state.credentials.username}
+              onChange={this.handleChange}
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="password"
+              value={this.state.credentials.password}
+              onChange={this.handleChange}
+              required
+            />
+            <button value="isLoggingIn">submit</button>
+          </form>
+        </div>
+      </>
     );
   }
 }

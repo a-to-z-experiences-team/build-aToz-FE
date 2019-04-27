@@ -2,9 +2,6 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
 class CarouselHomePage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

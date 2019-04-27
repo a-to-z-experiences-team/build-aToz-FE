@@ -5,8 +5,6 @@ import Cards from './Cards';
 import Carousel from './Carousel';
 import FeaturedContent from './FeaturedContent';
 import NavBar from './NavBar';
-import LoginForm from './LoginForm';
-import {Route} from 'react-router-dom'
 
 class HomePage extends React.Component {
     componentDidMount(){
