@@ -13,7 +13,9 @@ class LoginForm extends React.Component {
   
   login = event => {
     event.preventDefault();
-    console.log(this.state.credentials)
+    this.props.login(this.state.credentials).then(() => {
+      this.props.history.push("/experiencelist");
+    });
   };
   handleChange = event => {
     this.setState({

@@ -39,7 +39,7 @@ handleChange(e) {
       const lcName = item.name.toLowerCase();
       const lcBody = item.body.toLowerCase();
       const filter = e.target.value.toLowerCase();
-      return lcName || lcBody.includes(filter);
+      return lcName.includes(filter) || lcBody.includes(filter);
     });
   } else {
     newList = this.props.momExperiences;
@@ -55,7 +55,7 @@ handleChange(e) {
       <>
         <div className="viewAllContainer">
           <input type ='text' className='input' onChange= {this.handleChange} placeholder= 'Search Experiences' className='searchExperiences'></input>
-          
+
         </div>
         <div className ='experiencesButtons'> 
         <Button variant="danger" className = 'buttonsBelowSearchBar' > Date </Button>
@@ -65,9 +65,8 @@ handleChange(e) {
 
         <div className ='cardDataContainer'>
           {this.state.filtered.map((experienceData, i) => 
-    
+
           <div className = 'cardData'> 
-          {console.log(experienceData)}
             <Card style={{ width: '25rem' }} >
               <Card.Img variant="top" src="https://images.pexels.com/photos/1157399/pexels-photo-1157399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260s" />
               <Card.Body>
@@ -85,11 +84,9 @@ handleChange(e) {
     );
   }
 }
-
 const mapStateToProps = state => ({
   momExperiences: state.momExperiences
 })
-
 export default connect (
   mapStateToProps,
   {searchExperiences, experienceSuccessFetch}
