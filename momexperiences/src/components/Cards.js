@@ -1,13 +1,59 @@
 import React from "react";
 import "../styles.css";
 import { CardDeck, Card, Button } from "react-bootstrap";
+import {searchExperiences, experienceSuccessFetch} from '../actions/index';
+import {connect} from 'react-redux';
+
+
 
 class Cards extends React.Component {
+  constructor(props){
+    super(props)
+  this.state = {
+    filtered: []
+  }
+  this.handleChange = this.handleChange.bind(this);
+}
+  componentDidMount(){
+    this.props.experienceSuccessFetch()
+    this.setState({ 
+      filtered: this.props.momExperiences
+    })
+}
+
+componentWillReceiveProps(nextProps){
+  this.setState({
+    filtered:nextProps.momExperiences
+  })
+}
+
+handleChange(e) {
+  let currentList = [];
+  let newList = [];
+
+  if (e.target.value !== "") {
+
+    currentList = this.props.momExperiences;
+
+    newList = currentList.filter(item => {
+      const lc = item.name.toLowerCase();
+      const filter = e.target.value.toLowerCase();
+      return lc.includes(filter);
+    });
+  } else {
+    newList = this.props.momExperiences;
+  }
+  this.setState({
+    filtered: newList
+  });
+}
+
+
   render() {
     return (
       <>
         <div className="viewAllContainer">
-          <input  placeholder= 'Search Experiences' className='searchExperiences'></input>
+          <input type ='text' className='input' onChange= {this.handleChange} placeholder= 'Search Experiences' className='searchExperiences'></input>
           
         </div>
         <CardDeck>
@@ -19,8 +65,7 @@ class Cards extends React.Component {
             <Card.Body>
               <Card.Title> Hiking </Card.Title>
               <Card.Text>
-                We are planning on doing a steady hike, the trail is 2 miles
-                long, with beatiful scenery.
+             {this.state.filtered.map(comment => <p> {comment.name}</p>)}
               </Card.Text>
             </Card.Body>
             <div className="buttonContainer">
@@ -75,4 +120,11 @@ class Cards extends React.Component {
   }
 }
 
-export default Cards;
+const mapStateToProps = state => ({
+  momExperiences: state.momExperiences
+})
+
+export default connect (
+  mapStateToProps,
+  {searchExperiences, experienceSuccessFetch}
+)(Cards);

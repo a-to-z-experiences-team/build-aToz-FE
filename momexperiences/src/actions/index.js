@@ -12,6 +12,16 @@ export const experienceSuccessFetch = () => dispatch => {
     .catch(err => dispatch({ type: FETCH_MOM_EXPERIENCES_FAIL, payload: err }));
 };
 
+export const SEARCH_SUCCESS ='SEARCH_SUCCESS'
+export const SEARCH_FAIL = 'SEARCH_FAIL'
+
+export const searchExperiences = (search) => dispatch => {
+   axios.get("https://jsonplaceholder.typicode.com/comments", search)
+   .then(res => 
+    dispatch({type: SEARCH_SUCCESS, payload: res.data})
+    .catch(err => dispatch({type: SEARCH_FAIL, payload: err}))
+    )
+}
 
 export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
@@ -33,7 +43,6 @@ export const login = credentials => dispatch => {
       dispatch({ type: LOGIN_FAILURE, payload: err.response.message });
     });
 };
-
 
 export const FETCHING_EVENT = "FETCHING_EVENT";
 export const GET_EVENT = "GET_EVENT";
@@ -59,3 +68,5 @@ export const postEvent = event => {
     });
   };
 };
+
+
