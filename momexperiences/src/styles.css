@@ -109,17 +109,38 @@ Form {
   align-items: center;
 }
 
+.carousel-inner {
+  height: 30em;
+}
+.d-block {
+  height: 30em;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.carousel-control-next, .carousel-control-prev{
+  background-color: gray;
+  max-width: 15%;
+}
+
 
 @media only screen and (max-width: 803px) {
-  .d-block, .w-100 {
+  .d-block{
     height: auto;
   }
   .carousel-caption,
   .carousel-indicators {
     bottom: 0;
   }
+  .carousel-inner {
+    height: auto;
+  }
+  .carousel-control-next, .carousel-control-prev{
+    background-color: none;
+  }
 }
 @media only screen and (max-width: 574px) {
+  
   nav.navbarContent.navbar.navbar-expand  {
     display: flex;
     flex-direction: column;
@@ -133,6 +154,17 @@ Form {
   }
   button, .navButton {
     width: 300px;
+  }
+  .d-block {
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  .carousel-inner {
+    height: auto;
+  }
+  .carousel-control-next, .carousel-control-prev{
+    background-color: none;
   }
   .viewAllContainer {
     margin: 15px;
