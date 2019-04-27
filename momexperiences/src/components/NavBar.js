@@ -23,16 +23,19 @@ class NavBar extends React.Component {
           <div className="navLeftContent">
             <Navbar.Brand href="/">Logo</Navbar.Brand>
             <Nav.Link className="navLinks" href="#TopEvents">
-            Top Events
+            Your Bookings
             </Nav.Link>
             <Nav.Link className="navLinks" href="#Experiences">
-            Experiences
+            Favorites
             </Nav.Link>
             <Nav.Link className="navLinks" href="/CreateEvent">
-              Create Event
+              Host
             </Nav.Link>
             <Nav.Link className="navLinks"  href= '/ProfilePage' >
               Profile
+            </Nav.Link>
+            <Nav.Link className="navLinks"  href= '/ProfilePage' >
+              Help
             </Nav.Link>
           </div>
           <div className ='navButtonContainer'>

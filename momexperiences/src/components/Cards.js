@@ -36,9 +36,10 @@ handleChange(e) {
     currentList = this.props.momExperiences;
 
     newList = currentList.filter(item => {
-      const lc = item.name.toLowerCase();
+      const lcName = item.name.toLowerCase();
+      const lcBody = item.body.toLowerCase();
       const filter = e.target.value.toLowerCase();
-      return lc.includes(filter);
+      return lcName || lcBody.includes(filter);
     });
   } else {
     newList = this.props.momExperiences;
@@ -56,65 +57,30 @@ handleChange(e) {
           <input type ='text' className='input' onChange= {this.handleChange} placeholder= 'Search Experiences' className='searchExperiences'></input>
           
         </div>
-        <CardDeck>
-          <Card>
-            <Card.Img
-              variant="top"
-              src="https://images.pexels.com/photos/1157399/pexels-photo-1157399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260s"
-            />
-            <Card.Body>
-              <Card.Title> Hiking </Card.Title>
-              <Card.Text>
-             {this.state.filtered.map(comment => <p> {comment.name}</p>)}
-              </Card.Text>
-            </Card.Body>
-            <div className="buttonContainer">
-              <Button variant="danger">Check Out</Button>
-            </div>
-            <Card.Footer>
-              <small bg="danger" className="text-muted">
-                High Hills, May 10th, 2019
-              </small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img
-              variant="top"
-              src="https://images.pexels.com/photos/235554/pexels-photo-235554.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            />
-            <Card.Body>
-              <Card.Title> Treasure Hunt</Card.Title>
-              <Card.Text>
-                Join us for a fun treasure hunt at Indigo Park!
-              </Card.Text>
-            </Card.Body>
-            <div className="buttonContainer">
-              <Button variant="danger">Check Out</Button>
-            </div>
-            <Card.Footer>
-              <small className="text-muted">Rialto Park, May 03, 2019</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img
-              variant="top"
-              src="https://images.pexels.com/photos/1007773/pexels-photo-1007773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            />
-            <Card.Body>
-              <Card.Title> Stroller Strides </Card.Title>
-              <Card.Text>
-                Join our daily stroller walk around the park.
-              </Card.Text>
-            </Card.Body>
-            <div className="buttonContainer">
-              <Button variant="danger">Check Out</Button>
-            </div>
-            <Card.Footer>
-              <small className="text-muted">Rodondo Park, May 01, 2019 </small>
-            </Card.Footer>
-          </Card>
-        </CardDeck>
-        ;
+        <div className ='experiencesButtons'> 
+        <Button variant="danger" className = 'buttonsBelowSearchBar' > Date </Button>
+        <Button variant="danger" className = 'buttonsBelowSearchBar' > Location </Button>
+        <Button variant="danger" className = 'buttonsBelowSearchBar' >Price </Button>
+        </div>
+
+        <div className ='cardDataContainer'>
+          {this.state.filtered.map((experienceData, i) => 
+    
+          <div className = 'cardData'> 
+          {console.log(experienceData)}
+            <Card style={{ width: '25rem' }} >
+              <Card.Img variant="top" src="https://images.pexels.com/photos/1157399/pexels-photo-1157399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260s" />
+              <Card.Body>
+                <Card.Title>{experienceData.name}</Card.Title>
+                <Card.Text>
+                {experienceData.body}
+                </Card.Text>
+                <Button variant="danger">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </div> 
+          )}
+        </div>
       </>
     );
   }

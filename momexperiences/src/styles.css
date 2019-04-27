@@ -84,6 +84,21 @@
   height: 33.5em;
 }
 
+.buttonsBelowSearchBar {
+  margin: 15px;
+}
+
+.cardDataContainer{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+.cardData{
+  margin: 10px;
+}
+
 @media only screen and (max-width: 803px) {
   .d-block, .w-100 {
     height: auto;
@@ -112,6 +127,11 @@
     margin: 15px;
     display: flex;
     justify-content: center;
-
   }
+.experiencesButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+}
 }
