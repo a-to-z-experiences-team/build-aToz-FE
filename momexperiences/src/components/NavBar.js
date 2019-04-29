@@ -39,7 +39,7 @@ class NavBar extends React.Component {
             </Nav.Link>
           </div>
           <div className ='navButtonContainer'>
-            <Button className="navButton" variant="outline-light">
+            <Button className="navButton" variant="outline-light" href = '/SignUpForm'>
             Sign Up
             </Button>
             <Button className="navButton" variant="outline-light" href = '/LoginForm'>

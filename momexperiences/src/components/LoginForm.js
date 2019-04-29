@@ -35,12 +35,12 @@ class LoginForm extends React.Component {
         <h2>Login</h2>
         <Form onSubmit={this.login} className ='loginForm'>
         <Form.Group controlId="formBasicEmail" >
-          <Form.Label>Username</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control               
             type="text"
-            name="username"
-            placeholder="username"
-            value={this.state.credentials.username}
+            name="email"
+            placeholder="Email"
+            value={this.state.credentials.email}
             onChange={this.handleChange}
             required/>
         </Form.Group>
@@ -50,7 +50,7 @@ class LoginForm extends React.Component {
           <Form.Control               
               type="password"
               name="password"
-              placeholder="password"
+              placeholder="Password"
               value={this.state.credentials.password}
               onChange={this.handleChange}
               required />

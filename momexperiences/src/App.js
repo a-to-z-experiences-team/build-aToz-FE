@@ -5,6 +5,7 @@ import HomePage from './components/HomePage';
 import ProfilePage from './components/ProfilePage';
 import CreateEvent from './components/CreateEvent';
 import LoginForm from './components/LoginForm';
+import SignUpForm from './components/SignUpForm';
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
         <Route path= '/ProfilePage'  render = {props => <ProfilePage {...props}/> } />
         <Route path= '/CreateEvent'  render = {props => <CreateEvent {...props}/> } />
         <Route path= '/LoginForm'  render = {props => <LoginForm {...props}/> } />
+        <Route path= '/SignUpForm'  render = {props => <SignUpForm {...props}/> } />
         </>
       )
 }
