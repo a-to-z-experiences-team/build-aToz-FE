@@ -44,6 +44,7 @@ export const login = credentials => dispatch => {
     });
 };
 
+
 export const FETCHING_EVENT = "FETCHING_EVENT";
 export const GET_EVENT = "GET_EVENT";
 export const ADD_EVENT = "ADD_EVENT";
@@ -70,3 +71,27 @@ export const postEvent = event => {
 };
 
 
+export const FETCHING_SIGNUP = "FETCHING_SIGNUP";
+export const GET_SIGNUP = "GET_SIGNUP";
+export const ADD_SIGNUP = "ADD_SIGNUP";
+
+export const getSignUp = () => {
+  const promise = axios.get("http://localhost:5000/api/login");
+
+  return function(dispatch) {
+    dispatch({ type: FETCHING_SIGNUP });
+    promise.then(response => {
+      console.log(response);
+      dispatch({ type: GET_SIGNUP, payload: response.data });
+    });
+  };
+};
+
+export const postSignUp = SignUp => {
+  return function(dispatch) {
+    dispatch({ type: ADD_SIGNUP });
+    axios.post("http://localhost:5000/api/login", SignUp).then(response => {
+      dispatch(getSignUp());
+    });
+  };
+};

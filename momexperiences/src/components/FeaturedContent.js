@@ -15,7 +15,7 @@ const FeaturedContent = () => {
           you are looking for? Create one!
         </Card.Text>
         <div className = 'momSquadButton'> 
-        <Button variant="danger" >Join the Mom Squad</Button>
+        <Button variant="danger" href = '/SignUpForm' >Join the Mom Squad</Button>
         </div>
       </Card.Body>
     </Card>
