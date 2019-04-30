@@ -6,6 +6,7 @@ import ProfilePage from './components/ProfilePage';
 import CreateEvent from './components/CreateEvent';
 import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
+import IndividualCard from './components/IndividualCard';
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
         <Route path= '/CreateEvent'  render = {props => <CreateEvent {...props}/> } />
         <Route path= '/LoginForm'  render = {props => <LoginForm {...props}/> } />
         <Route path= '/SignUpForm'  render = {props => <SignUpForm {...props}/> } />
+        <Route name='IndividualCard' path= '/IndividualCard'  render = {props => <IndividualCard {...props}/> } />
         </>
       )
 }

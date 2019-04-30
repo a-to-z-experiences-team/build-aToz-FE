@@ -110,17 +110,17 @@ Form {
 }
 
 .carousel-inner {
-  height: 40em;
+  height: 50em;
 }
 .d-block {
-  height: 40em;
-  width: 70%;
+  height: 50em;
+  width: 75%;
   margin: 0 auto;
 }
 
 .carousel-control-next, .carousel-control-prev{
-  background-color: gray;
-  max-width: 15%;
+  background-color: #ff8c97;
+  max-width: 12.5%;
 }
 
 
