@@ -13,13 +13,13 @@ class IndividualCard extends React.Component {
  }
 }
   componentDidMount(){
-    console.log(this.props.state)
+      console.log(this.props.state)
 }
 
   render() {
     return (
       <>
-    <p> hi</p>
+ <p> hi</p>
       </>
     );
   }

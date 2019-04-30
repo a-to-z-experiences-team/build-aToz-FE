@@ -114,13 +114,13 @@ Form {
 }
 .d-block {
   height: 50em;
-  width: 75%;
+  width: 80%;
   margin: 0 auto;
 }
 
 .carousel-control-next, .carousel-control-prev{
   background-color: #ff8c97;
-  max-width: 12.5%;
+  max-width: 10%;
 }
 
 
