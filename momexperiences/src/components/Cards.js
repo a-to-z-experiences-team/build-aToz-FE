@@ -3,6 +3,8 @@ import "../styles.css";
 import { CardDeck, Card, Button } from "react-bootstrap";
 import {searchExperiences, experienceSuccessFetch} from '../actions/index';
 import {connect} from 'react-redux';
+import IndividualCard from './IndividualCard';
+import {Link} from 'react-router-dom';
 
 
 
@@ -65,16 +67,17 @@ handleChange(e) {
 
         <div className ='cardDataContainer'>
           {this.state.filtered.map((experienceData, i) => 
-
           <div className = 'cardData'> 
-            <Card style={{ width: '25rem' }} >
+            <Card style={{ width: '25rem' }}  key= {i}>
               <Card.Img variant="top" src="https://images.pexels.com/photos/1157399/pexels-photo-1157399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260s" />
               <Card.Body>
                 <Card.Title>{experienceData.name}</Card.Title>
                 <Card.Text>
                 {experienceData.body}
                 </Card.Text>
-                <Button variant="danger">Go somewhere</Button>
+                <Link to={{ pathname: `/IndividualCard/${i}`, state:{ experienceData } }}>
+                  <Button variant="danger" > Details </Button>
+                </Link>
               </Card.Body>
             </Card>
           </div> 
