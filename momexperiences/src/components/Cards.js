@@ -75,9 +75,9 @@ handleChange(e) {
                 <Card.Text>
                 {experienceData.body}
                 </Card.Text>
-                <Link to={{ pathname: `/IndividualCard/${i}`, state:{ experienceData } }}>
+
                   <Button variant="danger" > Details </Button>
-                </Link>
+
               </Card.Body>
             </Card>
           </div> 
