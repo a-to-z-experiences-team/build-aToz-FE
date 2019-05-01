@@ -10,7 +10,7 @@ export const experienceSuccessFetch = () => dispatch => {
       dispatch({ type: FETCH_MOM_EXPERIENCES_SUCCESS, payload: res.data })
     )
     .catch(err => dispatch({ type: FETCH_MOM_EXPERIENCES_FAIL, payload: err }));
-};
+}
 
 export const SEARCH_SUCCESS ='SEARCH_SUCCESS'
 export const SEARCH_FAIL = 'SEARCH_FAIL'
@@ -21,6 +21,13 @@ export const searchExperiences = (search) => dispatch => {
     dispatch({type: SEARCH_SUCCESS, payload: res.data})
     .catch(err => dispatch({type: SEARCH_FAIL, payload: err}))
     )
+}
+
+export const ADD_SELECTED_DATA = 'ADD_SELECTED_DATA'
+export const ADD_SELECTED_FAIL = 'ADD_SELECTED_FAIL'
+
+export const addSelectedData = (item) => dispatch => {
+  dispatch({type: ADD_SELECTED_DATA, payload: item})
 }
 
 export const LOGIN_START = "LOGIN_START";

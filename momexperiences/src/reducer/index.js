@@ -1,5 +1,5 @@
 import { 
-    FETCH_MOM_EXPERIENCES_SUCCESS, FETCH_MOM_EXPERIENCES_FAIL
+    FETCH_MOM_EXPERIENCES_SUCCESS, FETCH_MOM_EXPERIENCES_FAIL, ADD_SELECTED_DATA, ADD_SELECTED_FAIL
 } from '../actions'
 import {
     FETCHING_EVENT, GET_EVENT, ADD_EVENT
@@ -7,7 +7,8 @@ import {
 
 const initialstate ={
     momExperiences: [],
-    error: ''
+    error: '',
+    selectedCardData: []
 }
 
 export const reducer = (state = initialstate, action) =>{
@@ -21,6 +22,16 @@ export const reducer = (state = initialstate, action) =>{
         return {
             ...state,
             error: action.payload
+        }
+        case ADD_SELECTED_DATA:
+        return {
+          ...state,
+          selectedCardData: action.payload
+        }
+        case ADD_SELECTED_FAIL:
+        return {
+          ...state,
+          error: action.payload
         }
         default:
           return state;
