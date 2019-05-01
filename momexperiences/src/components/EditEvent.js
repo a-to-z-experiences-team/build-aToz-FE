@@ -17,6 +17,7 @@ class EditEvent extends React.Component {
     return (
       <>
         <NavBar />
+
         <div className="login-page-wrapper">
           <h2>Host an Event</h2>
           <Form onSubmit={this.addEvent}>
