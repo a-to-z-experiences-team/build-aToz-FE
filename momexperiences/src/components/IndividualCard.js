@@ -21,14 +21,27 @@ class IndividualCard extends React.Component {
   render() {
     return (
       <>
+      <div> 
         {this.state.data.map((info, i) => {
+          console.log(info.body)
         return (
           <div key ={i}>
-            <p> {info.name}</p>
-            <p> {info.body}</p>
+
+          <Card>
+            <Card.Header as="h5">Featured</Card.Header>
+            <Card.Body>
+              <Card.Title>{info.name}</Card.Title>
+              <Card.Text>
+              {info.body}
+              </Card.Text>
+              <Button variant="danger">Go somewhere</Button>
+            </Card.Body>
+          </Card>;
+
           </div>
         )
-      })} 
+      })}
+      </div> 
       </>
     );
   }
