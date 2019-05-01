@@ -13,20 +13,20 @@ class IndividualCard extends React.Component {
  }
 }
   componentDidMount(){
-      console.log(this.props.state)
+console.log(this.props.selectedCardData)
 }
 
   render() {
     return (
       <>
- <p> hi</p>
+        {this.props.selectedCardData }
       </>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  momExperiences: state.momExperiences
+  selectedCardData: state.selectedCardData
 })
 
 export default connect (

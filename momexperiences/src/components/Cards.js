@@ -1,12 +1,11 @@
 import React from "react";
 import "../styles.css";
 import { CardDeck, Card, Button } from "react-bootstrap";
-import {searchExperiences, experienceSuccessFetch} from '../actions/index';
+import {searchExperiences, addSelectedData, experienceSuccessFetch} from '../actions/index';
 import {connect} from 'react-redux';
 import IndividualCard from './IndividualCard';
 import {Link} from 'react-router-dom';
 import {Route} from 'react-router-dom';
-
 
 
 class Cards extends React.Component {
@@ -33,10 +32,8 @@ componentWillReceiveProps(nextProps){
 }
 
 onItemClick = (item, e) => {
-console.log(item)
-  return( 
-    <Link to={`/IndividualCard/${item.id}`} />
-  )
+  console.log(item)
+  this.props.addSelectedData(item.body)
 }
 
 handleChange(e) {
@@ -88,8 +85,9 @@ handleChange(e) {
                 <Card.Text>
                 {experienceData.body}
                 </Card.Text>
+                <Link to={`/IndividualCard/${experienceData.id}`} > 
                   <Button variant="danger" onClick={ boundItemClick } key = {i} > Details </Button>
-
+                </Link> 
               </Card.Body>
             </Card>
           </div> )}
@@ -105,5 +103,5 @@ const mapStateToProps = state => ({
 })
 export default connect (
   mapStateToProps,
-  {searchExperiences, experienceSuccessFetch}
+  {searchExperiences, experienceSuccessFetch, addSelectedData}
 )(Cards);
