@@ -25,9 +25,9 @@ class NavBar extends React.Component {
             <Nav.Link className="navLinks" href="#TopEvents">
             Your Bookings
             </Nav.Link>
-            <Nav.Link className="navLinks" href="#Experiences">
+            {/* <Nav.Link className="navLinks" href="#Experiences">
             Favorites
-            </Nav.Link>
+            </Nav.Link> */}
             <Nav.Link className="navLinks" href="/CreateEvent">
               Host
             </Nav.Link>
