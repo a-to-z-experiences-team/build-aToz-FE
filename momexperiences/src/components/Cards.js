@@ -32,8 +32,7 @@ componentWillReceiveProps(nextProps){
 }
 
 onItemClick = (item, e) => {
-  console.log(item)
-  this.props.addSelectedData(item.body)
+  this.props.addSelectedData(item)
 }
 
 handleChange(e) {
@@ -79,7 +78,7 @@ handleChange(e) {
             return( 
           <div className = 'cardData' key = {i}> 
             <Card style={{ width: '25rem' }}>
-              <Card.Img variant="top" src="https://images.pexels.com/photos/1157399/pexels-photo-1157399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260s" />
+              <Card.Img variant="top" src="https://images.unsplash.com/photo-1486704155675-e4c07f8ad160?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" />
               <Card.Body>
                 <Card.Title>{experienceData.name}</Card.Title>
                 <Card.Text>
@@ -99,7 +98,8 @@ handleChange(e) {
   }
 }
 const mapStateToProps = state => ({
-  momExperiences: state.momExperiences
+  momExperiences: state.momExperiences,
+  
 })
 export default connect (
   mapStateToProps,

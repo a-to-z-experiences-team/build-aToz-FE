@@ -10,16 +10,25 @@ class IndividualCard extends React.Component {
   constructor(props){
     super(props)
   this.state = {
+    data:[]
  }
 }
   componentDidMount(){
-console.log(this.props.selectedCardData)
+    this.setState({data: [this.props.selectedCardData]})
+    console.log(this.state.data)
 }
 
   render() {
     return (
       <>
-        {this.props.selectedCardData }
+        {this.state.data.map((info, i) => {
+        return (
+          <div key ={i}>
+            <p> {info.name}</p>
+            <p> {info.body}</p>
+          </div>
+        )
+      })} 
       </>
     );
   }
