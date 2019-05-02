@@ -55,7 +55,7 @@ class SignUpForm extends Component {
               />
             </Form.Group>
             <Form.Group controlId="formGridLocation">
-              <Form.Label>lastName</Form.Label>
+              <Form.Label>Last Name</Form.Label>
               <Form.Control
                 placeholder="Last Name"
                 type="users_lastName"
@@ -89,7 +89,7 @@ class SignUpForm extends Component {
             </Form.Group>
 
             <Form.Group controlId="formGridHobbies">
-              <Form.Label>userName</Form.Label>
+              <Form.Label>Username</Form.Label>
               <Form.Control
                 placeholder="Username"
                 type="users_userName"
