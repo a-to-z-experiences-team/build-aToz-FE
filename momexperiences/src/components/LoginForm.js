@@ -7,14 +7,14 @@ import {Form, Button} from 'react-bootstrap';
 class LoginForm extends React.Component {
   state = {
     credentials: {
-    username: "",
-    password: ""}
+      users_email: "",
+    users_password: ""}
   };
   
   login = event => {
     event.preventDefault();
     this.props.login(this.state.credentials).then(() => {
-      this.props.history.push("/experiencelist");
+      this.props.history.push("/");
     });
   };
   handleChange = event => {
@@ -38,9 +38,9 @@ class LoginForm extends React.Component {
           <Form.Label>Email</Form.Label>
           <Form.Control               
             type="text"
-            name="email"
+            name="users_email"
             placeholder="Email"
-            value={this.state.credentials.email}
+            value={this.state.credentials.users_email}
             onChange={this.handleChange}
             required/>
         </Form.Group>
@@ -49,9 +49,9 @@ class LoginForm extends React.Component {
           <Form.Label>Password</Form.Label>
           <Form.Control               
               type="password"
-              name="password"
+              name="users_password"
               placeholder="Password"
-              value={this.state.credentials.password}
+              value={this.state.credentials.users_password}
               onChange={this.handleChange}
               required />
         </Form.Group>

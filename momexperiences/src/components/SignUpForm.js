@@ -8,22 +8,27 @@ class SignUpForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      username: "",
-      password: "",
-      location: "",
-      hobbies: ""
+      users_firstName: "",
+      users_lastName: "",
+      users_email: "",
+      users_password: "",
+      users_userName: ""
     };
   }
 
-  addSignUp = () => {
+
+  addSignUp(e) {
+    e.preventDefault();
     this.props.postSignUp({
-      name: this.state.name,
-      username: this.state.username,
-      password: this.state.password,
-      location: this.state.location,
-      hobbies: this.state.hobbies
+      users_firstName:this.state.users_firstName,
+      users_lastName: this.state.users_lastName,
+      users_userName: this.state.users_userName,
+      users_email: this.state.users_email,
+      users_password: this.state.users_password,
     });
+
+    console.log(this.props.userSignUp)
+      
   };
 
   handleChange = event => {
@@ -37,14 +42,25 @@ class SignUpForm extends Component {
 
         <div className="login-page-wrapper">
           <h2>Sign Up</h2>
-          <Form>
+          <Form onSubmit = {this.addSignUp.bind(this)}>
             <Form.Group controlId="formGridName">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>First Name</Form.Label>
               <Form.Control
-                placeholder="Name"
-                type="name"
-                name="name"
-                value={this.state.name}
+                placeholder="First Name"
+                type="users_firstName"
+                name="users_firstName"
+                value={this.state.users_firstName}
+                onChange={this.handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group controlId="formGridLocation">
+              <Form.Label>lastName</Form.Label>
+              <Form.Control
+                placeholder="Last Name"
+                type="users_lastName"
+                name="users_lastName"
+                value={this.state.users_lastName}
                 onChange={this.handleChange}
                 required
               />
@@ -52,10 +68,10 @@ class SignUpForm extends Component {
             <Form.Group controlId="formGridEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control
-                type="email"
+                type="users_email"
                 placeholder="Enter Email"
-                name="email"
-                value={this.state.email}
+                name="users_email"
+                value={this.state.users_email}
                 onChange={this.handleChange}
                 required
               />
@@ -65,32 +81,20 @@ class SignUpForm extends Component {
               <Form.Control
                 type="password"
                 placeholder="Password"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleChange}
-                required
-              />
-            </Form.Group>
-
-            <Form.Group controlId="formGridLocation">
-              <Form.Label>Location</Form.Label>
-              <Form.Control
-                placeholder="Location"
-                type="location"
-                name="location"
-                value={this.state.location}
+                name="users_password"
+                value={this.state.users_password}
                 onChange={this.handleChange}
                 required
               />
             </Form.Group>
 
             <Form.Group controlId="formGridHobbies">
-              <Form.Label>Hobbies</Form.Label>
+              <Form.Label>userName</Form.Label>
               <Form.Control
-                placeholder="Walks, parks, art..."
-                type="hobbies"
-                name="hobbies"
-                value={this.state.hobbies}
+                placeholder="Username"
+                type="users_userName"
+                name="users_userName"
+                value={this.state.users_userName}
                 onChange={this.handleChange}
                 required
               />
@@ -108,7 +112,7 @@ class SignUpForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    signUp: state.signUp
+    userSignUp: state.userSignUp
   };
 };
 

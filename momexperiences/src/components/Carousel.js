@@ -11,7 +11,7 @@ class CarouselHomePage extends React.Component {
         <Carousel >
           <Carousel.Item >
             <img
-              className="d-block"
+              className="d-block w-100"
               src={require ('../imgs/TreeHug.jpg')}
               alt="First slide"
             />
@@ -21,7 +21,7 @@ class CarouselHomePage extends React.Component {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block "
+              className="d-block  w-100"
               src={require ('../imgs/ColorRun.jpg')}
               alt="Third slide"
             />
@@ -32,7 +32,7 @@ class CarouselHomePage extends React.Component {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block "
+              className="d-block  w-100"
               src={require ('../imgs/Sunset.jpg')}
               alt="Third slide"
             />

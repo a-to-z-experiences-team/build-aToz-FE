@@ -38,7 +38,7 @@ export const login = credentials => dispatch => {
   dispatch({ type: LOGIN_START });
   localStorage.removeItem("token");
   return axios
-    .post("http://localhost:5000/api/login", credentials)
+    .post("https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/auth/login", credentials)
     .then(res => {
       localStorage.setItem("token", res.data.payload);
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
@@ -81,6 +81,7 @@ export const postEvent = event => {
 export const FETCHING_SIGNUP = "FETCHING_SIGNUP";
 export const GET_SIGNUP = "GET_SIGNUP";
 export const ADD_SIGNUP = "ADD_SIGNUP";
+export const ADD_SIGNUP_FAIL = "ADD_SIGNUP_FAIL";
 
 export const getSignUp = () => {
   const promise = axios.get("http://localhost:5000/api/login");
@@ -94,11 +95,10 @@ export const getSignUp = () => {
   };
 };
 
-export const postSignUp = SignUp => {
-  return function(dispatch) {
-    dispatch({ type: ADD_SIGNUP });
-    axios.post("http://localhost:5000/api/login", SignUp).then(response => {
-      dispatch(getSignUp());
-    });
+export const postSignUp = SignUp => dispatch =>{
+    axios.post("https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/auth/register", SignUp)
+    .then(res => {
+      dispatch({type: ADD_SIGNUP, payload: res.data });
+    })
+    .catch(err => dispatch({ type: ADD_SIGNUP_FAIL, payload: err }))
   };
-};
