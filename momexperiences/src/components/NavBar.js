@@ -1,8 +1,7 @@
 import React from "react";
 import "../styles.css";
 import { Button, Navbar, Nav } from "react-bootstrap";
-
-
+import logo from "../imgs/logo.png";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -14,16 +13,22 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-        <Navbar bg="danger" variant="dark" className="navbarContent" 
-    style = {{
-    display: 'flex',
-    justifyContent: 'space-around'
-    }}
->
+        <Navbar
+          bg="danger"
+          variant="dark"
+          className="navbarContent"
+          style={{
+            display: "flex",
+            justifyContent: "space-around"
+          }}
+        >
           <div className="navLeftContent">
-            <Navbar.Brand href="/">Logo</Navbar.Brand>
+            <Navbar.Brand href="/">
+            <img src={logo} width="40" height="40" alt="Logo"></img>
+            
+            </Navbar.Brand>
             <Nav.Link className="navLinks" href="#TopEvents">
-            Your Bookings
+              Your Bookings
             </Nav.Link>
             {/* <Nav.Link className="navLinks" href="#Experiences">
             Favorites
@@ -31,18 +36,26 @@ class NavBar extends React.Component {
             <Nav.Link className="navLinks" href="/CreateEvent">
               Host
             </Nav.Link>
-            <Nav.Link className="navLinks"  href= '/ProfilePage' >
+            <Nav.Link className="navLinks" href="/ProfilePage">
               Profile
             </Nav.Link>
-            <Nav.Link className="navLinks"  href= '/ProfilePage' >
+            <Nav.Link className="navLinks" href="/ProfilePage">
               Help
             </Nav.Link>
           </div>
-          <div className ='navButtonContainer'>
-            <Button className="navButton" variant="outline-light" href = '/SignUpForm'>
-            Sign Up
+          <div className="navButtonContainer">
+            <Button
+              className="navButton"
+              variant="outline-light"
+              href="/SignUpForm"
+            >
+              Sign Up
             </Button>
-            <Button className="navButton" variant="outline-light" href = '/LoginForm'>
+            <Button
+              className="navButton"
+              variant="outline-light"
+              href="/LoginForm"
+            >
               Login
             </Button>
           </div>
