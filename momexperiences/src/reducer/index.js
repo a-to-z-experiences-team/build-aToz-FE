@@ -6,12 +6,12 @@ import {
   ADD_SIGNUP, 
   SEARCH_FAIL,
   ADD_SIGNUP_FAIL,
-  LOGIN_SUCCESS
+  LOGIN_SUCCESS,
+  ADD_EVENT_FAIL,
+  FETCHING_EVENT,
+  GET_EVENT,
+  ADD_EVENT
 } from '../actions'
-
-import {
-  FETCHING_EVENT, GET_EVENT, ADD_EVENT
-} from '../actions';
 
 const initialstate ={
   momExperiences: [],
@@ -62,7 +62,16 @@ export const reducer = (state = initialstate, action) =>{
         ...state,
         error: action.payload
       }
-
+      case ADD_EVENT:
+      return {
+        ...state,
+        momExperiences: action.payload
+      }
+      case ADD_EVENT_FAIL:
+      return {
+        ...state,
+        error: action.payload
+      }
       default:
         return state;
   }
