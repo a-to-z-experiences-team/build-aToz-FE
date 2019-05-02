@@ -20,9 +20,10 @@ class Cards extends React.Component {
 }
   componentDidMount(){
     this.props.experienceSuccessFetch()
-    this.setState({ 
-      filtered: this.props.momExperiences
-    })
+    console.log(this.props.momExperiences)
+    // this.setState({ 
+    //   filtered: this.props.momExperiences
+    // })
 }
 
 componentWillReceiveProps(nextProps){
@@ -80,9 +81,9 @@ handleChange(e) {
             <Card style={{ width: '25rem' }}>
               <Card.Img variant="top" src="https://images.unsplash.com/photo-1486704155675-e4c07f8ad160?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" />
               <Card.Body>
-                <Card.Title>{experienceData.name}</Card.Title>
+                <Card.Title>{experienceData.exp_title}</Card.Title>
                 <Card.Text>
-                {experienceData.body}
+                {experienceData.exp_desc}
                 </Card.Text>
                 <Link to={`/IndividualCard/${experienceData.id}`} > 
                   <Button variant="danger" onClick={ boundItemClick } key = {i} > Details </Button>

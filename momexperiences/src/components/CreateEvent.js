@@ -8,28 +8,34 @@ class CreateEvent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      experienceEvent: "",
+      exp_title: "",
       location: "",
-      lengthOfTime: "",
-      availability: "",
-      maxGuest: "",
-      description: ""
+      createdAt: "",
+      // availability: "",
+      maxGuests: "",
+      exp_desc: "",
+      startsOn: "",
+      exp_type: '',
+      createdBy: ''
     };
   }
 
-  addEvent = () => {
+  addEvent = (e) => {
+    e.preventDefault();
     this.props.postEvent({
-      experienceEvent: this.state.experienceEvent,
+      exp_title: this.state.exp_title,
       location: this.state.location,
-      lengthOfTime: this.state.lengthOfTime,
-      availability: this.state.availability,
-      maxGuest: this.state.maxGuest,
-      description: this.state.description
-    });
+      createdAt: this.state.createdAt,
+      // availability: this.state.availability,
+      maxGuests: this.state.maxGuests,
+      exp_desc: this.state.exp_desc,
+      startsOn: this.state.startsOn
+    })
+    this.props.history.push("/");
   };
 
   handleChange = e => {
-    this.setState({ [e.target.experienceEvent]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   render() {
@@ -44,8 +50,8 @@ class CreateEvent extends Component {
               <Form.Control
                 onChange={this.handleChange}
                 placeholder="Event Name"
-                value={this.state.experienceEvent}
-                name="experienceEvent"
+                value={this.state.exp_title}
+                name="exp_title"
                 required
               />
             </Form.Group>
@@ -60,16 +66,16 @@ class CreateEvent extends Component {
               />
             </Form.Group>
             <Form.Group controlId="formGridLength">
-              <Form.Label>Length of Event</Form.Label>
+              <Form.Label>Created on </Form.Label>
               <Form.Control
                 onChange={this.handleChange}
                 placeholder="Length of Event"
-                value={this.state.lengthOfTime}
-                name="lengthOfTime"
+                value={this.state.createdAt}
+                name="createdAt"
                 required
               />
             </Form.Group>
-            <Form.Group controlId="formGridAvailability">
+            {/* <Form.Group controlId="formGridAvailability">
               <Form.Label>Availabilty</Form.Label>
               <Form.Control
                 onChange={this.handleChange}
@@ -78,14 +84,24 @@ class CreateEvent extends Component {
                 name="availability"
                 required
               />
+            </Form.Group> */}
+            <Form.Group controlId="formGridAvailability">
+              <Form.Label>Date of Event</Form.Label>
+              <Form.Control
+                onChange={this.handleChange}
+                placeholder="Starts on"
+                value={this.state.startsOn}
+                name="startsOn"
+                required
+              />
             </Form.Group>
             <Form.Group controlId="formGridGuest">
               <Form.Label>Maximum Number of Guest</Form.Label>
               <Form.Control
                 onChange={this.handleChange}
                 placeholder="Number of Guest"
-                value={this.state.maxGuest}
-                name="maxGuest"
+                value={this.state.maxGuests}
+                name="maxGuests"
                 required
               />
             </Form.Group>
@@ -94,8 +110,8 @@ class CreateEvent extends Component {
               <Form.Control
                 onChange={this.handleChange}
                 placeholder="Description"
-                value={this.state.description}
-                name="description"
+                value={this.state.exp_desc}
+                name="exp_desc"
                 required
               />
             </Form.Group>

@@ -102,26 +102,18 @@
   align-items: center;
   width: 15em;
 }
-
 Form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.carousel-inner {
-  height: 50em;
-}
+
 .d-block {
-  height: 50em;
-  width: 80%;
   margin: 0 auto;
 }
 
-.carousel-control-next, .carousel-control-prev{
-  background-color: #ff8c97;
-  max-width: 10%;
-}
+
 
 
 @media only screen and (max-width: 1250px) {
