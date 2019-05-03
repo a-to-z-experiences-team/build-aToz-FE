@@ -1,4 +1,5 @@
-![Home](https://momexperiences/src/imgs/HomepageScreenshot.png)
+![Home](https://github.com/a-to-z-experiences-team/build-aToz-FE/blob/master/momexperiences/src/imgs/HomepageScreenshot.png)
+
 
 ### Initialize Project
 
