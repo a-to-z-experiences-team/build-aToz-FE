@@ -25,8 +25,8 @@ class SignUpForm extends Component {
       users_userName: this.state.users_userName,
       users_email: this.state.users_email,
       users_password: this.state.users_password,
-    });
-
+    })
+    
     console.log(this.props.userSignUp)
       
   };
@@ -38,8 +38,6 @@ class SignUpForm extends Component {
   render() {
     return (
       <>
-        <NavBar />
-
         <div className="login-page-wrapper">
           <h2>Sign Up</h2>
           <Form onSubmit = {this.addSignUp.bind(this)}>

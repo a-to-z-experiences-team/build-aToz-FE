@@ -23,7 +23,7 @@ class NavBar extends React.Component {
           }}
         >
           <div className="navLeftContent">
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/Homepage">
             <img src={logo} width="40" height="40" alt="Logo"></img>
             
             </Navbar.Brand>

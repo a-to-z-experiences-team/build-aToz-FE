@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { login } from "../actions";
-import NavBar from './NavBar';
+import {Route, withRouter} from 'react-router-dom';
 import {Form, Button} from 'react-bootstrap';
 
 class LoginForm extends React.Component {
@@ -13,9 +13,8 @@ class LoginForm extends React.Component {
   
   login = event => {
     event.preventDefault();
-    this.props.login(this.state.credentials).then(() => {
-      this.props.history.push("/");
-    });
+    this.props.login(this.state.credentials)
+    this.props.history.push("/Homepage")
   };
   handleChange = event => {
     this.setState({
@@ -29,11 +28,10 @@ class LoginForm extends React.Component {
   render() {
     return (
       <>
-      <NavBar />
-      
+        
         <div className="login-page-wrapper">
         <h2>Login</h2>
-        <Form onSubmit={this.login} className ='loginForm'>
+        <Form onSubmit={this.login.bind(this)} className ='loginForm'>
         <Form.Group controlId="formBasicEmail" >
           <Form.Label>Email</Form.Label>
           <Form.Control               
@@ -71,7 +69,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   { login }
-)(LoginForm);
+)(LoginForm));
