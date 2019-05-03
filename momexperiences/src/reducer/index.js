@@ -10,7 +10,8 @@ import {
   ADD_EVENT_FAIL,
   FETCHING_EVENT,
   GET_EVENT,
-  ADD_EVENT
+  ADD_EVENT,
+  UPDATED_OBJECTS
 } from '../actions'
 
 const initialstate ={
@@ -65,17 +66,29 @@ export const reducer = (state = initialstate, action) =>{
       case ADD_EVENT:
       return {
         ...state,
-        momExperiences: action.payload
+        momExperiences:[ ...state, action.payload]
       }
       case ADD_EVENT_FAIL:
       return {
         ...state,
         error: action.payload
       }
+      case GET_EVENT:
+      return {
+        ...state,
+        selectedCardData: action.payload
+      }
+      case UPDATED_OBJECTS:
+      return {
+        ...state,
+        momExperiences: action.payload
+      }
+
       default:
         return state;
   }
 }
+
 
 
 
@@ -97,13 +110,6 @@ export const eventReducer = (state = initialState, action) => {
       fetchingEvent: true,
       fetchedEvent: false,
       addingEvent: true
-    });
-    case GET_EVENT:
-    return Object.assign({}, state, {
-      fetchingEvent: false,
-      fetchedEvent: true,
-      addingEvent: false,
-      event: action.payload
     });
     case ADD_EVENT:
     return Object.assign({}, state, {
