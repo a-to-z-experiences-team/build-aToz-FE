@@ -1,16 +1,27 @@
 import React from "react";
 import "../styles.css";
 import { Card, Button } from "react-bootstrap";
-import { searchExperiences, experienceSuccessFetch } from "../actions/index";
+import { searchExperiences, experienceSuccessFetch, deleteEvent, updateArrays } from "../actions/index";
 import { connect } from "react-redux";
 import NavBar from "./NavBar";
 
 class IndividualCard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+
+    };
   }
   componentDidMount() {}
+
+  deleteEvent(e){
+    e.preventDefault();
+    const id = this.props.selectedCardData.id
+    this.props.deleteEvent(id)
+    this.props.updateArrays()
+    console.log(this.props.momExperiences)
+    // this.props.history.push('/Homepage')
+  }
 
   render() {
     return (
@@ -23,9 +34,10 @@ class IndividualCard extends React.Component {
               <Card.Title>{this.props.selectedCardData.exp_title}</Card.Title>
               <Card.Text>{this.props.selectedCardData.exp_desc}</Card.Text>
               <Button variant="danger">Go somewhere</Button>
+              <Button onClick= {this.deleteEvent.bind(this)} >Delete</Button>
             </Card.Body>
           </Card>
-          ;
+          
         </div>
       </>
     );
@@ -39,5 +51,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { searchExperiences, experienceSuccessFetch }
+  { searchExperiences, experienceSuccessFetch, deleteEvent, updateArrays }
 )(IndividualCard);

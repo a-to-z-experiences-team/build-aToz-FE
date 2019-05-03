@@ -58,16 +58,14 @@ export const GET_EVENT = "GET_EVENT";
 export const ADD_EVENT = "ADD_EVENT";
 export const ADD_EVENT_FAIL = "ADD_EVENT_FAIL";
 
-export const getEvent = () => {
-  const promise = axios.get("http://localhost:5000/api/login");
-
-  return function(dispatch) {
-    dispatch({ type: FETCHING_EVENT });
-    promise.then(response => {
-      console.log(response);
-      dispatch({ type: GET_EVENT, payload: response.data });
-    });
-  };
+export const getEvent = id => dispatch => {
+  const endpoint = `https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/experiences/${id}`
+  const headers =  {Authorization: localStorage.getItem("token")}
+  axios
+    .get(endpoint, {headers})
+    .then(res => {
+      dispatch({type: GET_EVENT, payload: res.data });
+    })
 };
 
 export const postEvent = event =>  dispatch => {
@@ -77,7 +75,7 @@ export const postEvent = event =>  dispatch => {
   const endpoint = 'https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/experience'
 
     axios
-    .post(endpoint, event, headers)
+    .post(endpoint, event, {headers})
     .then(res => {
       dispatch({type: ADD_EVENT, payload: res.data });
     })
@@ -108,3 +106,25 @@ export const postSignUp = SignUp => dispatch =>{
     })
     .catch(err => dispatch({ type: ADD_SIGNUP_FAIL, payload: err }))
   };
+
+  export const DELETED_STATE = "DELETED_STATE";
+
+  export const deleteEvent = id => dispatch => {
+    const headers =  {Authorization: localStorage.getItem("token")}
+    axios
+      .delete(`https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/exp/${id}`, {headers})
+      .then(res =>{
+        // dispatch({type: DELETED_STATE, payload: res.data });
+      })
+  }
+
+  export const UPDATED_OBJECTS = "UPDATED_OBJECTS";
+
+  export const updateArrays = () => dispatch => {
+    const headers =  {authorization: localStorage.getItem('token')}
+    axios
+      .get("https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/home", {headers} )
+      .then(res =>
+        dispatch({ type: UPDATED_OBJECTS, payload: res.data })
+      )
+  }

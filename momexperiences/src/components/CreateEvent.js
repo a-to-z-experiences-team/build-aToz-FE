@@ -33,7 +33,7 @@ class CreateEvent extends Component {
       startsOn: this.state.startsOn
     })
     console.log(this.props.momExperiences)
-    // this.props.history.push("/Homepage");
+    this.props.history.push("/Homepage");
   };
 
   handleChange = e => {
