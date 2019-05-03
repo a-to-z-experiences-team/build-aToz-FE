@@ -45,10 +45,10 @@ export const login = credentials => dispatch => {
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
     })
     .catch(err => {
-      if (err.response.status === "Error") {
+      if (err.status === "Error") {
         localStorage.removeItem("token");
       }
-      dispatch({ type: LOGIN_FAILURE, payload: err.response.message });
+      dispatch({ type: LOGIN_FAILURE, payload: err.message });
     });
 };
 
@@ -70,10 +70,14 @@ export const getEvent = () => {
   };
 };
 
-export const postEvent = event => dispatch =>{
-  const headers =  {authorization: localStorage.getItem('token')}
+export const postEvent = event =>  dispatch => {
+  console.log(event)
+  const headers =  {Authorization: localStorage.getItem("token")}
+  console.log(headers)
+  const endpoint = 'https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/experience'
+
     axios
-    .post("https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/experience", headers, event )
+    .post(endpoint, event, headers)
     .then(res => {
       dispatch({type: ADD_EVENT, payload: res.data });
     })

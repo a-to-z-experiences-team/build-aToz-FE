@@ -109,12 +109,13 @@ Form {
 }
 
 
-.d-block {
+.d-block, .w-100 {
   margin: 0 auto;
 }
 
-
-
+.carousel.slide, .carousel-inner, .carousel-item {
+  height: 50em;
+}
 
 @media only screen and (max-width: 1250px) {
   .d-block{

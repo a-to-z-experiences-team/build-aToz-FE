@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getEvent, postEvent } from "../actions";
 import NavBar from "./NavBar";
 import { Form, Button } from "react-bootstrap";
+import {withRouter} from 'react-router-dom';
 
 class CreateEvent extends Component {
   constructor(props) {
@@ -31,7 +32,8 @@ class CreateEvent extends Component {
       exp_desc: this.state.exp_desc,
       startsOn: this.state.startsOn
     })
-    this.props.history.push("/");
+    console.log(this.props.momExperiences)
+    // this.props.history.push("/Homepage");
   };
 
   handleChange = e => {
@@ -128,14 +130,15 @@ class CreateEvent extends Component {
 
 const mapStateToProps = state => {
   return {
-    event: state.event
+    event: state.event,
+    momExperiences: state.momExperiences
   };
 };
 
-export default connect(
+export default withRouter (connect(
   mapStateToProps,
   {
     getEvent,
     postEvent
   }
-)(CreateEvent);
+)(CreateEvent))
