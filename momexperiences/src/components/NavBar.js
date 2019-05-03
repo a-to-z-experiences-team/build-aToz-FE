@@ -2,12 +2,19 @@ import React from "react";
 import "../styles.css";
 import { Button, Navbar, Nav } from "react-bootstrap";
 import logo from "../imgs/logo.png";
+import { withRouter} from 'react-router-dom';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = { show: true };
+  }
+
+  logOut(e){
+    e.preventDefault()
+    localStorage.removeItem('token')
+    this.props.history.push('/')
   }
 
   render() {
@@ -54,9 +61,9 @@ class NavBar extends React.Component {
             <Button
               className="navButton"
               variant="outline-light"
-              href="/LoginForm"
+              onClick = {this.logOut.bind(this)}
             >
-              Login
+              Logout
             </Button>
           </div>
         </Navbar>
@@ -65,4 +72,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

@@ -30,8 +30,6 @@ componentWillReceiveProps(nextProps){
 
 onItemClick = (item, e) => {
   this.props.getEvent(item.id)
-  console.log(this.props.selectedCardData)
-
 }
 
 handleChange(e) {
