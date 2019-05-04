@@ -27,7 +27,7 @@ export const reducer = (state = initialstate, action) =>{
       case FETCH_MOM_EXPERIENCES_SUCCESS:
       return {
         ...state,
-        momExperiences: action.payload
+        momExperiences:  action.payload
       }
       case FETCH_MOM_EXPERIENCES_FAIL:
       return {
@@ -87,7 +87,7 @@ export const reducer = (state = initialstate, action) =>{
       case DELETED_STATE:
       return {
         ...state,
-        momExperiences: action.payload
+        momExperiences:  action.payload
       }
       default:
         return state;

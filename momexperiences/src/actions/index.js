@@ -114,7 +114,8 @@ export const postSignUp = SignUp => dispatch =>{
     axios
       .delete(`https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/exp/${id}`, {headers})
       .then(res =>{
-        dispatch({type: DELETED_STATE, payload: res.data });
+        dispatch({type: DELETED_STATE, payload: res.data.allevents });
+
       })
   }
 

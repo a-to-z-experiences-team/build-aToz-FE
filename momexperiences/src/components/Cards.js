@@ -21,6 +21,7 @@ class Cards extends React.Component {
     this.setState({ 
       filtered: this.props.momExperiences
     })
+   
 }
 componentWillReceiveProps(nextProps){
   this.setState({
@@ -55,6 +56,7 @@ handleChange(e) {
 }
 
   render() {
+    console.log(this.props.momExperiences)
     return (
       <>
         <div className="viewAllContainer">
