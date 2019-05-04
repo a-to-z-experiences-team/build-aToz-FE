@@ -20,6 +20,7 @@ class CreateEvent extends Component {
       createdBy: ''
     };
   }
+  
 
   addEvent = (e) => {
     e.preventDefault();

@@ -14,7 +14,9 @@ class LoginForm extends React.Component {
   login = event => {
     event.preventDefault();
     this.props.login(this.state.credentials)
-    this.props.history.push("/Homepage")
+      this.props.history.push("/Homepage")
+
+
   };
   handleChange = event => {
     this.setState({

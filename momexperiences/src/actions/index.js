@@ -131,3 +131,60 @@ export const postSignUp = SignUp => dispatch =>{
         dispatch({ type: UPDATED_OBJECTS, payload: res.data })
       )
   }
+
+  export const GET_SINGLE_EXPERIENCE = "GET_SINGLE_EXPERIENCE";
+  export const GET_SINGLE_EXPERIENCE_FAIL = "GET_SINGLE_EXPERIENCE_FAIL";
+
+  export const editEvent = event => dispatch => {
+    const headers =  {Authorization: localStorage.getItem("token")}
+    axios
+      .get(`https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/experience/${event.id}`, {headers})
+      .then(res =>{
+        dispatch({type: GET_SINGLE_EXPERIENCE, payload: res.data })
+      })
+      .catch(err => dispatch ({type: GET_SINGLE_EXPERIENCE_FAIL, payload: err}) )
+  }
+
+  export const EDIT_EVENT_SUCCESS = "EDIT_EVENT_SUCCESS";
+  export const EDIT_EVENT_FAIL = "EDIT_EVENT_FAIL";
+
+  export const submittedEventChanges = event => dispatch => {
+    const headers =  {Authorization: localStorage.getItem("token")}
+    axios
+      .put(`https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/${event.id}/editexperience/`, event, {headers})
+      .then(res =>{
+        dispatch({type: EDIT_EVENT_SUCCESS, payload: event })
+      })
+      .catch(err => dispatch ({type: EDIT_EVENT_FAIL, payload: err}) )
+  }
+
+
+  export const GET_USER = "GET_USER";
+  export const GET_USER_FAIL = "GET_USER_FAIL";
+
+  export const getuser = id => dispatch => {
+    const headers =  {Authorization: localStorage.getItem("token")}
+    axios
+      .get(`https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/users/${id}/`, {headers})
+      .then(res =>{
+        dispatch({type: GET_USER, payload: res.data })
+      })
+      .catch(err => dispatch ({type: GET_USER_FAIL, payload: err}) )
+  }
+
+
+  
+  export const USER_EVENTS = "USER_EVENTS";
+  export const USER_EVENTS_FAIL = "USER_EVENTS_FAIL";
+
+  export const getuserEvents = id => dispatch => {
+    const headers =  {Authorization: localStorage.getItem("token")}
+    axios
+      .get(`https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/experiencesby/${id}/`, {headers})
+      .then(res =>{
+        dispatch({type: USER_EVENTS, payload: res.data })
+      })
+      .catch(err => dispatch ({type: USER_EVENTS_FAIL, payload: err}) )
+  }
+
+

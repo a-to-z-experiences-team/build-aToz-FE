@@ -22,7 +22,7 @@ class CarouselHomePage extends React.Component {
           <Carousel.Item>
             <img
               className="d-block  w-100"
-              src={require ('../imgs/ColorRun.jpg')}
+              src={require ('../imgs/Pumpkin.jpg')}
               alt="Third slide"
             />
 

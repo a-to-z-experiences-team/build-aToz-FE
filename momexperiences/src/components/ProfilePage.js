@@ -2,7 +2,9 @@ import React from "react";
 import "../styles.css";
 import { connect } from "react-redux";
 import { Card } from "react-bootstrap";
-import {experienceSuccessFetch} from '../actions/index';
+import {experienceSuccessFetch, 
+  getuser
+} from '../actions/index';
 import NavBar from './NavBar';
 
 class ProfilePage extends React.Component {
@@ -12,8 +14,12 @@ class ProfilePage extends React.Component {
     this.state = { };
   }
 
-  componentDidMount(){
-    console.log(this.props.userSignUp.users_email)
+  componentDidMount(){  
+    const token = localStorage.getItem("token")
+    const deconstructedToken = token.split('.')[1]
+    const deconstructedUserID = JSON.parse(window.atob(deconstructedToken))
+
+    this.props.getuser(deconstructedUserID)
 }
 
   render() {
@@ -23,7 +29,7 @@ class ProfilePage extends React.Component {
           <div className = 'profileContainer'> 
           <img src = 'https://images.pexels.com/photos/698877/pexels-photo-698877.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' className = 'profilePhoto' alt =' user profile'/>
           <Card>
-          <Card.Header className='profileName' as="h5">{this.props.userSignUp.users_firstName} {this.props.userSignUp.users_firstName}</Card.Header>
+          <Card.Header className='profileName' as="h5">{this.props.profileCard.users_firstName} {this.props.profileCard.users_lastName}</Card.Header>
           <Card.Body>
           <Card.Title>Hobbies</Card.Title>
           <Card.Text>
@@ -43,12 +49,15 @@ class ProfilePage extends React.Component {
 
 const mapStateToProps = state => ({
   momExperiences: state.momExperiences,
-  userSignUp: state.userSignUp
+  userSignUp: state.userSignUp,
+  profileCard: state.profileCard
 })
 
 export default connect(
   mapStateToProps,
-  {experienceSuccessFetch}
+  {experienceSuccessFetch,
+  getuser
+}
 )(ProfilePage);
 
 
