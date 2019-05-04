@@ -11,7 +11,8 @@ import {
   FETCHING_EVENT,
   GET_EVENT,
   ADD_EVENT,
-  UPDATED_OBJECTS
+  UPDATED_OBJECTS,
+  DELETED_STATE
 } from '../actions'
 
 const initialstate ={
@@ -83,7 +84,11 @@ export const reducer = (state = initialstate, action) =>{
         ...state,
         momExperiences: action.payload
       }
-
+      case DELETED_STATE:
+      return {
+        ...state,
+        momExperiences: action.payload
+      }
       default:
         return state;
   }

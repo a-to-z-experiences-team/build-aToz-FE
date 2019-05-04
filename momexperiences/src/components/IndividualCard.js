@@ -18,9 +18,8 @@ class IndividualCard extends React.Component {
     e.preventDefault();
     const id = this.props.selectedCardData.id
     this.props.deleteEvent(id)
-    this.props.updateArrays()
     console.log(this.props.momExperiences)
-    // this.props.history.push('/Homepage')
+    this.props.history.push('/Homepage')
   }
 
   render() {

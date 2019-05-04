@@ -46,17 +46,16 @@
   margin: 20px;
 }
 
-.searchExperiences{
+.searchExperiences {
   border-radius: 3.5px;
   padding-left: 10px;
-  
 }
 .profileName {
   display: flex;
   justify-content: center;
 }
 
-.profileContainer{
+.profileContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,7 +67,7 @@
   justify-content: flex-start;
 }
 
-.momSquadButton{
+.momSquadButton {
   display: flex;
   justify-content: center;
 }
@@ -80,18 +79,16 @@
   color: white;
 }
 
-
 .buttonsBelowSearchBar {
   margin: 15px;
 }
 
-.cardDataContainer{
+.cardDataContainer {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  
 }
-.cardData{
+.cardData {
   margin: 10px;
 }
 
@@ -102,39 +99,89 @@
   align-items: center;
   width: 15em;
 }
-Form {
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
-.d-block, .w-100 {
+.d-block,
+.w-100 {
   margin: 0 auto;
 }
 
-.carousel.slide, .carousel-inner, .carousel-item {
+.carousel.slide,
+.carousel-inner,
+.carousel-item,
+.carousel-item.active {
   height: 50em;
 }
 
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login {
+  margin: 50px;
+}
+.loginbuttonContainer {
+  margin: 25px;
+}
+.loginCardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px;
+}
+
+.loginLogo {
+  width: 10em;
+}
+
+.logoImgContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loginCardContainer {
+  margin: 100px auto;
+}
+
+.signinButton {
+  width: 300px;
+}
 @media only screen and (max-width: 1250px) {
-  .d-block{
+  .d-block {
     height: auto;
   }
   .carousel-caption,
   .carousel-indicators {
     bottom: 0;
   }
-  .carousel-inner {
+  .carousel.slide,
+  .carousel-inner,
+  .carousel-item,
+  .carousel-item.active {
     height: auto;
   }
-  .carousel-control-next, .carousel-control-prev{
+
+  .carousel-control-next,
+  .carousel-control-prev {
     background-color: none;
   }
 }
 @media only screen and (max-width: 574px) {
-  
-  nav.navbarContent.navbar.navbar-expand  {
+  nav.navbarContent.navbar.navbar-expand {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,18 +192,20 @@ Form {
     flex-direction: column;
     align-items: center;
   }
-  button, .navButton {
+  button,
+  .navButton {
     width: 300px;
   }
   .d-block {
     height: auto;
     margin: 0 auto;
   }
-  
+
   .carousel-inner {
     height: auto;
   }
-  .carousel-control-next, .carousel-control-prev{
+  .carousel-control-next,
+  .carousel-control-prev {
     background-color: none;
   }
   .viewAllContainer {
@@ -164,10 +213,10 @@ Form {
     display: flex;
     justify-content: center;
   }
-.experiencesButtons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0px;
-}
+  .experiencesButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+  }
 }
