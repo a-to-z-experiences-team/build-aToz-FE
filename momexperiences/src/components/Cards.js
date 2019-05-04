@@ -42,8 +42,8 @@ handleChange(e) {
     currentList = this.props.momExperiences;
 
     newList = currentList.filter(item => {
-      const lcName = item.name.toLowerCase();
-      const lcBody = item.body.toLowerCase();
+      const lcName = item.exp_title.toLowerCase();
+      const lcBody = item.exp_desc.toLowerCase();
       const filter = e.target.value.toLowerCase();
       return lcName.includes(filter) || lcBody.includes(filter);
     });
