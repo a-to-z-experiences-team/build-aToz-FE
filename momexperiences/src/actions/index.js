@@ -4,7 +4,7 @@ export const FETCH_MOM_EXPERIENCES_SUCCESS = "FETCH_MOM_EXPERIENCES_SUCCESS";
 export const FETCH_MOM_EXPERIENCES_FAIL = "FETCH_MOM_EXPERIENCES_FAIL";
 
 export const experienceSuccessFetch = () => dispatch => {
-  const headers =  {authorization: localStorage.getItem('token')}
+  const headers =  {Authorization: localStorage.getItem('token')}
   axios
     .get("https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/home", {headers} )
     .then(res =>
@@ -12,6 +12,7 @@ export const experienceSuccessFetch = () => dispatch => {
     )
     .catch(err => dispatch({ type: FETCH_MOM_EXPERIENCES_FAIL, payload: err }));
 }
+
 
 export const SEARCH_SUCCESS ='SEARCH_SUCCESS'
 export const SEARCH_FAIL = 'SEARCH_FAIL'

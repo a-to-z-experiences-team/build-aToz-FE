@@ -62,7 +62,7 @@ export const reducer = (state = initialstate, action) =>{
       case LOGIN_SUCCESS:
       return {
         ...state,
-        error: action.payload
+        userSignUp: action.payload
       }
       case ADD_EVENT:
       return {

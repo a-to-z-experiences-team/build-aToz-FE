@@ -17,7 +17,7 @@ const App = () => {
         <Route path= '/Homepage' render = {props => <HomePage {...props}/> } />
         <Route path= '/ProfilePage'  render = {props => <ProfilePage {...props}/> } />
         <Route path= '/CreateEvent'  render = {props => <CreateEvent {...props}/> } />
-        <Route path= '/LoginForm'  render = {props => <LoginForm {...props} history= {this.props.history} /> } />
+        <Route path= '/LoginForm'  render = {props => <LoginForm {...props}  /> } />
         <Route path= '/SignUpForm'  render = {props => <SignUpForm {...props}/> } />
         <Route exact path= '/'  render = {props => <SignIn {...props}/> } />
         <Route path="/IndividualCard/:id"  render = {props => <IndividualCard {...props}/> } />
