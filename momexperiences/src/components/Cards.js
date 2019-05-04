@@ -1,11 +1,10 @@
 import React from "react";
 import "../styles.css";
-import { CardDeck, Card, Button } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import {searchExperiences, addSelectedData, experienceSuccessFetch, getEvent} from '../actions/index';
 import {connect} from 'react-redux';
-import IndividualCard from './IndividualCard';
 import {Link} from 'react-router-dom';
-import {Route} from 'react-router-dom';
+
 class Cards extends React.Component {
   constructor(props){
     super(props)
@@ -21,6 +20,8 @@ class Cards extends React.Component {
     this.setState({ 
       filtered: this.props.momExperiences
     })
+    
+   
 }
 componentWillReceiveProps(nextProps){
   this.setState({
@@ -41,8 +42,8 @@ handleChange(e) {
     currentList = this.props.momExperiences;
 
     newList = currentList.filter(item => {
-      const lcName = item.name.toLowerCase();
-      const lcBody = item.body.toLowerCase();
+      const lcName = item.exp_title.toLowerCase();
+      const lcBody = item.exp_desc.toLowerCase();
       const filter = e.target.value.toLowerCase();
       return lcName.includes(filter) || lcBody.includes(filter);
     });
@@ -55,6 +56,7 @@ handleChange(e) {
 }
 
   render() {
+    console.log(this.props.momExperiences)
     return (
       <>
         <div className="viewAllContainer">

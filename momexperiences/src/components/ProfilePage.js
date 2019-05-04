@@ -13,8 +13,7 @@ class ProfilePage extends React.Component {
   }
 
   componentDidMount(){
-    this.props.experienceSuccessFetch()
-    
+    console.log(this.props.userSignUp.users_email)
 }
 
   render() {
@@ -24,7 +23,7 @@ class ProfilePage extends React.Component {
           <div className = 'profileContainer'> 
           <img src = 'https://images.pexels.com/photos/698877/pexels-photo-698877.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' className = 'profilePhoto' alt =' user profile'/>
           <Card>
-          <Card.Header className='profileName' as="h5">Ann Smith</Card.Header>
+          <Card.Header className='profileName' as="h5">{this.props.userSignUp.users_firstName} {this.props.userSignUp.users_firstName}</Card.Header>
           <Card.Body>
           <Card.Title>Hobbies</Card.Title>
           <Card.Text>
@@ -43,7 +42,8 @@ class ProfilePage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  momExperiences: state.momExperiences
+  momExperiences: state.momExperiences,
+  userSignUp: state.userSignUp
 })
 
 export default connect(

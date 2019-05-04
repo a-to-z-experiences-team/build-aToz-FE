@@ -11,14 +11,17 @@ import {
   FETCHING_EVENT,
   GET_EVENT,
   ADD_EVENT,
-  UPDATED_OBJECTS
+  UPDATED_OBJECTS,
+  DELETED_STATE,
+  DELETED_FAIL
 } from '../actions'
 
 const initialstate ={
   momExperiences: [],
   error: '',
   selectedCardData: [],
-  userSignUp: []
+  userSignUp: [],
+  deleted: ''
 }
 
 export const reducer = (state = initialstate, action) =>{
@@ -26,7 +29,7 @@ export const reducer = (state = initialstate, action) =>{
       case FETCH_MOM_EXPERIENCES_SUCCESS:
       return {
         ...state,
-        momExperiences: action.payload
+        momExperiences:  action.payload
       }
       case FETCH_MOM_EXPERIENCES_FAIL:
       return {
@@ -61,7 +64,7 @@ export const reducer = (state = initialstate, action) =>{
       case LOGIN_SUCCESS:
       return {
         ...state,
-        error: action.payload
+        userSignUp: action.payload
       }
       case ADD_EVENT:
       return {
@@ -83,7 +86,18 @@ export const reducer = (state = initialstate, action) =>{
         ...state,
         momExperiences: action.payload
       }
-
+      case DELETED_STATE:
+      return {
+        ...state,
+        momExperiences:  action.payload,
+        deleted: true
+      }
+      case DELETED_FAIL:
+      return {
+        ...state,
+        error:  action.payload,
+        deleted: false
+      }
       default:
         return state;
   }

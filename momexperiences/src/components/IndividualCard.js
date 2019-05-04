@@ -9,18 +9,25 @@ class IndividualCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      deleted: false
     };
   }
   componentDidMount() {}
+
 
   deleteEvent(e){
     e.preventDefault();
     const id = this.props.selectedCardData.id
     this.props.deleteEvent(id)
-    this.props.updateArrays()
-    console.log(this.props.momExperiences)
-    // this.props.history.push('/Homepage')
+
+    if( this.props.deleted== true){
+      alert('Event has been Deleted')
+    } else {
+      alert("You don't have access to delete event.")
+    }
+    
+    this.props.history.push('/Homepage')
+
   }
 
   render() {
@@ -46,7 +53,9 @@ class IndividualCard extends React.Component {
 
 const mapStateToProps = state => ({
   selectedCardData: state.selectedCardData,
-  momExperiences: state.momExperiences
+  momExperiences: state.momExperiences,
+  deleted: state.deleted,
+  error: state.error
 });
 
 export default connect(

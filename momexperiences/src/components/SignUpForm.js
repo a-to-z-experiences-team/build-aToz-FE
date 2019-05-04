@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getSignUp, postSignUp } from "../actions";
+import { getSignUp, postSignUp, login } from "../actions";
 import NavBar from "./NavBar";
 import { Form, Button, Col } from "react-bootstrap";
+import { withRouter} from 'react-router-dom';
+import LoginForm from './LoginForm';
 
 class SignUpForm extends Component {
   constructor(props) {
@@ -12,7 +14,7 @@ class SignUpForm extends Component {
       users_lastName: "",
       users_email: "",
       users_password: "",
-      users_userName: ""
+      users_userName: "",
     };
   }
 
@@ -25,10 +27,9 @@ class SignUpForm extends Component {
       users_userName: this.state.users_userName,
       users_email: this.state.users_email,
       users_password: this.state.users_password,
-    })
-    
-    console.log(this.props.userSignUp)
-      
+    }) 
+
+   this.props.history.push("/LoginForm");
   };
 
   handleChange = event => {
@@ -108,16 +109,15 @@ class SignUpForm extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    userSignUp: state.userSignUp
-  };
-};
+const mapStateToProps = state => ({
+  userSignUp: state.userSignUp,
+})
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   {
     getSignUp,
-    postSignUp
+    postSignUp,
+    login,
   }
-)(SignUpForm);
+)(SignUpForm));
