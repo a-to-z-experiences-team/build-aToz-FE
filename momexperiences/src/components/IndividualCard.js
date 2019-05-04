@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles.css";
 import { Card, Button } from "react-bootstrap";
-import { searchExperiences, experienceSuccessFetch, deleteEvent, updateArrays } from "../actions/index";
+import { searchExperiences, editEvent, experienceSuccessFetch, deleteEvent, updateArrays } from "../actions/index";
 import { connect } from "react-redux";
 import NavBar from "./NavBar";
 
@@ -25,9 +25,15 @@ class IndividualCard extends React.Component {
     } else {
       alert("You don't have access to delete event.")
     }
-    
     this.props.history.push('/Homepage')
 
+  }
+
+  editEvent(e){
+    e.preventDefault();
+    const event = this.props.selectedCardData
+    this.props.editEvent(event)
+    this.props.history.push('/EditEvent')
   }
 
   render() {
@@ -42,6 +48,7 @@ class IndividualCard extends React.Component {
               <Card.Text>{this.props.selectedCardData.exp_desc}</Card.Text>
               <Button variant="danger">Go somewhere</Button>
               <Button onClick= {this.deleteEvent.bind(this)} >Delete</Button>
+              <Button onClick= {this.editEvent.bind(this)} >Edit</Button>
             </Card.Body>
           </Card>
           
@@ -60,5 +67,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { searchExperiences, experienceSuccessFetch, deleteEvent, updateArrays }
+  { searchExperiences, experienceSuccessFetch,  editEvent,  deleteEvent, updateArrays }
 )(IndividualCard);

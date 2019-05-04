@@ -3,7 +3,7 @@ import "../styles.css";
 import { Card, Button } from "react-bootstrap";
 import {searchExperiences, addSelectedData, experienceSuccessFetch, getEvent} from '../actions/index';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 class Cards extends React.Component {
   constructor(props){
@@ -20,8 +20,9 @@ class Cards extends React.Component {
     this.setState({ 
       filtered: this.props.momExperiences
     })
+
     
-   
+    this.forceUpdate();
 }
 componentWillReceiveProps(nextProps){
   this.setState({
@@ -98,7 +99,7 @@ const mapStateToProps = state => ({
   selectedCardData: state.selectedCardData
 
 })
-export default connect (
+export default withRouter(connect (
   mapStateToProps,
   {searchExperiences, experienceSuccessFetch, addSelectedData, getEvent}
-)(Cards);
+)(Cards));

@@ -16,6 +16,7 @@ class NavBar extends React.Component {
     localStorage.removeItem('token')
     this.props.history.push('/')
   }
+  
 
   render() {
     return (
@@ -34,7 +35,7 @@ class NavBar extends React.Component {
             <img src={logo} width="40" height="40" alt="Logo"></img>
             
             </Navbar.Brand>
-            <Nav.Link className="navLinks" href="#TopEvents">
+            <Nav.Link className="navLinks" href="/Bookings">
               Your Bookings
             </Nav.Link>
             <Nav.Link className="navLinks" href="/CreateEvent">
