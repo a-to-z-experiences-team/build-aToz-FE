@@ -109,15 +109,16 @@ export const postSignUp = SignUp => dispatch =>{
   };
 
   export const DELETED_STATE = "DELETED_STATE";
+  export const DELETED_FAIL = "DELETED_FAIL";
 
   export const deleteEvent = id => dispatch => {
     const headers =  {Authorization: localStorage.getItem("token")}
     axios
       .delete(`https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/exp/${id}`, {headers})
       .then(res =>{
-        dispatch({type: DELETED_STATE, payload: res.data.allevents });
-
+        dispatch({type: DELETED_STATE, payload: res.data.allevents })
       })
+      .catch(err => dispatch ({type: DELETED_FAIL, payload: err}) )
   }
 
   export const UPDATED_OBJECTS = "UPDATED_OBJECTS";

@@ -1,11 +1,10 @@
 import React from "react";
 import "../styles.css";
-import { CardDeck, Card, Button } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import {searchExperiences, addSelectedData, experienceSuccessFetch, getEvent} from '../actions/index';
 import {connect} from 'react-redux';
-import IndividualCard from './IndividualCard';
 import {Link} from 'react-router-dom';
-import {Route} from 'react-router-dom';
+
 class Cards extends React.Component {
   constructor(props){
     super(props)
@@ -21,6 +20,7 @@ class Cards extends React.Component {
     this.setState({ 
       filtered: this.props.momExperiences
     })
+    
    
 }
 componentWillReceiveProps(nextProps){

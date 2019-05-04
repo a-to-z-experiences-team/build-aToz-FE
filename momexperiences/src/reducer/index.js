@@ -12,14 +12,16 @@ import {
   GET_EVENT,
   ADD_EVENT,
   UPDATED_OBJECTS,
-  DELETED_STATE
+  DELETED_STATE,
+  DELETED_FAIL
 } from '../actions'
 
 const initialstate ={
   momExperiences: [],
   error: '',
   selectedCardData: [],
-  userSignUp: []
+  userSignUp: [],
+  deleted: ''
 }
 
 export const reducer = (state = initialstate, action) =>{
@@ -87,7 +89,14 @@ export const reducer = (state = initialstate, action) =>{
       case DELETED_STATE:
       return {
         ...state,
-        momExperiences:  action.payload
+        momExperiences:  action.payload,
+        deleted: true
+      }
+      case DELETED_FAIL:
+      return {
+        ...state,
+        error:  action.payload,
+        deleted: false
       }
       default:
         return state;

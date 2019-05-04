@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { login } from "../actions";
+import { login, experienceSuccessFetch } from "../actions";
 import { withRouter} from 'react-router-dom';
 import {Form, Button} from 'react-bootstrap';
 
@@ -71,5 +71,5 @@ const mapStateToProps = state => {
 
 export default withRouter(connect(
   mapStateToProps,
-  { login }
+  { login, experienceSuccessFetch }
 )(LoginForm));
