@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles.css";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 const FeaturedContent = () => {
   return (
@@ -14,9 +14,6 @@ const FeaturedContent = () => {
           with cloth diapers, to outings with other children. Don't see an event
           you are looking for? Create one!
         </Card.Text>
-        <div className = 'momSquadButton'> 
-        <Button variant="danger" href = '/SignUpForm' >Join the Mom Squad</Button>
-        </div>
       </Card.Body>
     </Card>
   );
