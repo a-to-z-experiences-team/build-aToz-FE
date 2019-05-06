@@ -12,21 +12,16 @@ class IndividualCard extends React.Component {
       deleted: false
     };
   }
-  componentDidMount() {}
+  componentDidMount() {
+
+  }
 
 
   deleteEvent(e){
     e.preventDefault();
     const id = this.props.selectedCardData.id
     this.props.deleteEvent(id)
-
-    if( this.props.deleted== true){
-      alert('Event has been Deleted')
-    } else {
-      alert("You don't have access to delete event.")
-    }
     this.props.history.push('/Homepage')
-
   }
 
   editEvent(e){
@@ -41,7 +36,7 @@ class IndividualCard extends React.Component {
       <>
         <div>
           <NavBar />
-          <Card>
+          {/* <Card>
             <Card.Header as="h5">Featured</Card.Header>
             <Card.Body>
               <Card.Title>{this.props.selectedCardData.exp_title}</Card.Title>
@@ -50,7 +45,7 @@ class IndividualCard extends React.Component {
               <Button onClick= {this.deleteEvent.bind(this)} >Delete</Button>
               <Button onClick= {this.editEvent.bind(this)} >Edit</Button>
             </Card.Body>
-          </Card>
+          </Card> */}
           
         </div>
       </>

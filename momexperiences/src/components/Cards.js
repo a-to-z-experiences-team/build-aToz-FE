@@ -20,9 +20,6 @@ class Cards extends React.Component {
     this.setState({ 
       filtered: this.props.momExperiences
     })
-
-    
-    this.forceUpdate();
 }
 componentWillReceiveProps(nextProps){
   this.setState({

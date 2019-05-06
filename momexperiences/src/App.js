@@ -10,6 +10,7 @@ import SignUpForm from './components/SignUpForm';
 import Bookings from './components/Bookings';
 import IndividualCard from './components/IndividualCard';
 import SignIn from './components/SignIn';
+import MyEvents from './components/MyEvents';
 
 
 
@@ -23,6 +24,7 @@ const App = () => {
         <Route path= '/LoginForm'  render = {props => <LoginForm {...props}  /> } />
         <Route path= '/SignUpForm'  render = {props => <SignUpForm {...props}/> } />
         <Route path= '/Bookings'  render = {props => <Bookings {...props}/> } />
+        <Route path= '/MyEvents'  render = {props => <MyEvents {...props}/> } />
         <Route exact path= '/'  render = {props => <SignIn {...props}/> } />
         <Route path="/IndividualCard/:id"  render = {props => <IndividualCard {...props}/> } />
         </>
