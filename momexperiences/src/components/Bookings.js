@@ -19,37 +19,23 @@ class Bookings extends React.Component {
     const deconstructedToken = token.split('.')[1]
     const deconstructedUserID = JSON.parse(window.atob(deconstructedToken))
     this.props.getuserEvents(deconstructedUserID.subject)
-    
     // this.setState({filtered: this.props.userEvents}
 
   }
 
 
-  deleteEvent(e){
-    e.preventDefault();
-    const id = this.props.selectedCardData.id
-    this.props.deleteEvent(id)
-
-
-  }
-
-  editEvent(e){
-    e.preventDefault();
-    const event = this.props.selectedCardData
-    this.props.editEvent(event)
-    this.props.history.push('/EditEvent')
-  }
-
-  console(){
-     console.log(this.props.userEvents)
+  seeEvents(e){
+    e.preventDefault(e)
+    this.props.history.push('/MyEvents')
 
   }
   render() {
     return (
       <>
-        <div>
+
         <NavBar />
-          <Button onClick ={this.console.bind(this)}>Load Events</Button>
+        <div className = 'loadButtonEventContainer'>
+          <Button onClick ={this.seeEvents.bind(this)} className = 'loadButtonEvent'>Load Events</Button>
         </div>
       </>
     );

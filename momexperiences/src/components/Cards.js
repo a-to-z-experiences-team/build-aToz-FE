@@ -76,9 +76,11 @@ handleChange(e) {
                 <Card.Text>
                 {experienceData.exp_desc}
                 </Card.Text>
+                <div className = 'DetailsCardButton'> 
                 <Link to={`/IndividualCard/${experienceData.id}`} > 
                   <Button variant="danger" onClick={ boundItemClick } key = {i} > Details </Button>
                 </Link> 
+                </div>
               </Card.Body>
             </Card>
           </div> )}
