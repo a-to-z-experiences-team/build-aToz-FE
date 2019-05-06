@@ -32,9 +32,12 @@ class Bookings extends React.Component {
   render() {
     return (
       <>
-        <div>
+
         <NavBar />
-          <Button onClick ={this.seeEvents.bind(this)}>Load Events</Button>
+
+        <div className = 'loadButtonEventContainer'>
+          <Button onClick ={this.seeEvents.bind(this)} className = 'loadButtonEvent'>Load Events</Button>
+
         </div>
       </>
     );

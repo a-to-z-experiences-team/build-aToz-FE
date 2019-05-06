@@ -59,9 +59,3 @@ export default connect(
   getuser
 }
 )(ProfilePage);
-
-
-
-
-
-

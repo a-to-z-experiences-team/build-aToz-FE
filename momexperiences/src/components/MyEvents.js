@@ -34,26 +34,30 @@ class MyEvents extends React.Component {
       <>
         <div>
         <NavBar />
-        <Card>
+        
             {this.props.userEvents.map((event, i) => {
             let boundItemClick = this.onItemClick.bind(this, event);
 
             return (
                 <>
+                <Card > 
                     <Card.Header as="h5" key = {i}>{event.exp_title}</Card.Header>
                         <Card.Body>
-                            <Card.Title>{event.exp_title}</Card.Title>
-                            <Card.Text>{event.exp_desc}</Card.Text>
+                        <Card.Title>{event.exp_title}</Card.Title>
+              <Card.Text>Event Starts on: {event.startsOn}</Card.Text>
+              <Card.Text>Description: {event.exp_desc}</Card.Text>
+              <Card.Text>Location: {event.location}</Card.Text>
+              <Card.Text>Created By: {event.createdBy}</Card.Text>
+              <Card.Text>Max Guests: {event.maxGuests}</Card.Text>
 
-                        <Button variant="danger" onClick={ boundItemClick } key = {i} > Details </Button>
-    
+              <small className="text-muted">Created on: {event.createdAt}</small>
+           
                     </Card.Body>
+                    </Card>
                 </>
             )}
             )
             }
-
-        </Card>
         </div>
       </>
     );
