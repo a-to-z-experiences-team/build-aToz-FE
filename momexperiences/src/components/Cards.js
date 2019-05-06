@@ -63,11 +63,6 @@ handleChange(e) {
         <div className="viewAllContainer">
           <input type ='text' className='input' onChange= {this.handleChange} placeholder= 'Search Experiences' className='searchExperiences'></input>
         </div>
-        <div className ='experiencesButtons'> 
-        <Button variant="danger" className = 'buttonsBelowSearchBar' > Date </Button>
-        <Button variant="danger" className = 'buttonsBelowSearchBar' > Location </Button>
-        <Button variant="danger" className = 'buttonsBelowSearchBar' >Price </Button>
-        </div>
         <div className ='cardDataContainer'>
 
           {this.state.filtered.map((experienceData, i) => {
