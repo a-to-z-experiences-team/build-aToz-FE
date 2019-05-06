@@ -27,17 +27,17 @@ class ProfilePage extends React.Component {
       <>
         <NavBar />
           <div className = 'profileContainer'> 
-          <img src = 'https://images.pexels.com/photos/698877/pexels-photo-698877.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' className = 'profilePhoto' alt =' user profile'/>
-          <Card>
+          <img src = {require ('../imgs/profileIcon.png')}/>
+          <Card style={{ width: '25rem' }}>
           <Card.Header className='profileName' as="h5">{this.props.profileCard.users_firstName} {this.props.profileCard.users_lastName}</Card.Header>
           <Card.Body>
-          <Card.Title>Hobbies</Card.Title>
+          <Card.Title>Email</Card.Title>
           <Card.Text>
-          Enjoy spending time with my little one, and teaching him via creative and educational activities.
+          {this.props.profileCard.users_email}
           </Card.Text>
-          <Card.Title>Location</Card.Title>
+          <Card.Title>Username</Card.Title>
           <Card.Text>
-          Upper West side of the city of Petaluma, CA.
+          {this.props.profileCard.users_userName}
           </Card.Text>
           </Card.Body>
           </Card>

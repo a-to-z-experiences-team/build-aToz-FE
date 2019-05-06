@@ -154,33 +154,3 @@ export const reducer = (state = initialstate, action) =>{
 }
 
 
-
-
-
-
-const initialState = {
-  event: [],
-  fetchingEvent: false,
-  fetchedEvent: true,
-  addingEvent: false,
-  updatingEvent: false,
-  deletingEvent: false,
-  error: null
-}
-
-export const eventReducer = (state = initialState, action) => {
-  switch(action.type) {
-    case FETCHING_EVENT:
-    return Object.assign({}, state, {
-      fetchingEvent: true,
-      fetchedEvent: false,
-      addingEvent: true
-    });
-    case ADD_EVENT:
-    return Object.assign({}, state, {
-      addingEvent: true
-    })
-    default:
-    return state;
-  }
-}
