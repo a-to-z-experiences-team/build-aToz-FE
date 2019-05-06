@@ -34,8 +34,10 @@ class Bookings extends React.Component {
       <>
 
         <NavBar />
+
         <div className = 'loadButtonEventContainer'>
           <Button onClick ={this.seeEvents.bind(this)} className = 'loadButtonEvent'>Load Events</Button>
+
         </div>
       </>
     );

@@ -12,7 +12,9 @@ class IndividualCard extends React.Component {
       deleted: false
     };
   }
-  componentDidMount() {}
+  componentDidMount() {
+
+  }
 
 
   deleteEvent(e){
@@ -34,7 +36,7 @@ class IndividualCard extends React.Component {
       <>
         <div>
           <NavBar />
-          <Card>
+          {/* <Card>
             <Card.Header as="h5">Featured</Card.Header>
             <Card.Body>
               <Card.Title>{this.props.selectedCardData.exp_title}</Card.Title>
@@ -49,7 +51,7 @@ class IndividualCard extends React.Component {
               </div>
               <small className="text-muted">Created on: {this.props.selectedCardData.createdAt}</small>
             </Card.Body>
-          </Card>
+          </Card> */}
           
         </div>
       </>

@@ -40,7 +40,7 @@ class MyEvents extends React.Component {
 
             return (
                 <>
-                <Card >
+                <Card > 
                     <Card.Header as="h5" key = {i}>{event.exp_title}</Card.Header>
                         <Card.Body>
                         <Card.Title>{event.exp_title}</Card.Title>
