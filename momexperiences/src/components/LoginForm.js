@@ -11,9 +11,9 @@ class LoginForm extends React.Component {
     users_password: ""}
   };
   
-  login = event => {
+  login = async event => {
     event.preventDefault();
-    this.props.login(this.state.credentials)
+    await this.props.login(this.state.credentials)
       this.props.history.push("/Homepage")
 
 
