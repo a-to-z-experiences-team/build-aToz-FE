@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import IndividualCard from './IndividualCard';
 import {Link} from 'react-router-dom';
 import {Route} from 'react-router-dom';
+
 class Cards extends React.Component {
   constructor(props){
     super(props)
