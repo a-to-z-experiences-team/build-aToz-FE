@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getSignUp, postSignUp, login } from "../actions";
-import NavBar from "./NavBar";
-import { Form, Button, Col } from "react-bootstrap";
+
+import { Form, Button } from "react-bootstrap";
 import { withRouter} from 'react-router-dom';
-import LoginForm from './LoginForm';
 
 class SignUpForm extends Component {
   constructor(props) {
