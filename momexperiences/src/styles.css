@@ -26,7 +26,16 @@
 .navButton {
   margin: 10px;
 }
+.loadBookings {
+  display: flex;
+  justify-content: center;
+}
 
+.loadBookingsButton{
+  width: 300px;
+  margin: 100px auto;
+
+}
 .buttonContainer {
   display: flex;
   flex-direction: column;
@@ -160,6 +169,48 @@ form {
 .signinButton {
   width: 300px;
 }
+.DetailsCardButton {
+  display: flex;
+  justify-content: center;
+}
+.individualCardButtons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.individButtons {
+  margin: 0 15px;
+}
+
+.myEventCards{
+  margin: 25px;
+}
+.loadButtonEventContainer{
+  margin: 100px auto;
+  display: flex;
+  justify-content: center;
+}
+.loadButtonEvent{
+  margin: 0 auto;
+  width: 300px;
+}
+
+.noEventsCard{
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.noEventsButton{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
 @media only screen and (max-width: 1250px) {
   .d-block {
     height: auto;
@@ -218,5 +269,13 @@ form {
     flex-direction: column;
     align-items: center;
     margin: 0px;
+  }
+  .individualCardButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .individButtons{
+    margin: 25px;
   }
 }

@@ -12,14 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const store = createStore(reducer, applyMiddleware(thunk,logger)
 )
 
-// ReactDOM.render(
-// <Router>
-//     <Provider store={store}>
-//         <App />
-//     </Provider>
-// </Router>,
-// document.getElementById('root')); 
-
 ReactDOM.render(
     <Provider store={store}>
       <Router>

@@ -11,10 +11,10 @@ class NavBar extends React.Component {
     this.state = { show: true };
   }
 
-  logOut(e){
+  async logOut(e){
     e.preventDefault()
-    localStorage.removeItem('token')
-    this.props.history.push('/')
+    await localStorage.removeItem('token')
+    await this.props.history.push('/')
   }
   
 

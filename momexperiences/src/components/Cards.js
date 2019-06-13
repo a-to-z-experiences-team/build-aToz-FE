@@ -20,9 +20,6 @@ class Cards extends React.Component {
     this.setState({ 
       filtered: this.props.momExperiences
     })
-
-    
-    this.forceUpdate();
 }
 componentWillReceiveProps(nextProps){
   this.setState({
@@ -63,11 +60,6 @@ handleChange(e) {
         <div className="viewAllContainer">
           <input type ='text' className='input' onChange= {this.handleChange} placeholder= 'Search Experiences' className='searchExperiences'></input>
         </div>
-        <div className ='experiencesButtons'> 
-        <Button variant="danger" className = 'buttonsBelowSearchBar' > Date </Button>
-        <Button variant="danger" className = 'buttonsBelowSearchBar' > Location </Button>
-        <Button variant="danger" className = 'buttonsBelowSearchBar' >Price </Button>
-        </div>
         <div className ='cardDataContainer'>
 
           {this.state.filtered.map((experienceData, i) => {
@@ -81,9 +73,11 @@ handleChange(e) {
                 <Card.Text>
                 {experienceData.exp_desc}
                 </Card.Text>
+                <div className = 'DetailsCardButton'> 
                 <Link to={`/IndividualCard/${experienceData.id}`} > 
                   <Button variant="danger" onClick={ boundItemClick } key = {i} > Details </Button>
                 </Link> 
+                </div>
               </Card.Body>
             </Card>
           </div> )}
