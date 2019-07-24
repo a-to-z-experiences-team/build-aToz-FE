@@ -31,10 +31,9 @@
   justify-content: center;
 }
 
-.loadBookingsButton{
+.loadBookingsButton {
   width: 300px;
   margin: 100px auto;
-
 }
 .buttonContainer {
   display: flex;
@@ -146,15 +145,19 @@ form {
 .loginbuttonContainer {
   margin: 25px;
 }
-.loginCardContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 25px;
+
+.noCardStyle {
+  border: none;
 }
 
 .loginLogo {
   width: 10em;
+}
+
+.protected {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
 }
 
 .logoImgContainer {
@@ -182,20 +185,20 @@ form {
   margin: 0 15px;
 }
 
-.myEventCards{
+.myEventCards {
   margin: 25px;
 }
-.loadButtonEventContainer{
+.loadButtonEventContainer {
   margin: 100px auto;
   display: flex;
   justify-content: center;
 }
-.loadButtonEvent{
+.loadButtonEvent {
   margin: 0 auto;
   width: 300px;
 }
 
-.noEventsCard{
+.noEventsCard {
   width: 450px;
   display: flex;
   flex-direction: column;
@@ -204,7 +207,7 @@ form {
   padding: 50px;
 }
 
-.noEventsButton{
+.noEventsButton {
   width: 50%;
   display: flex;
   justify-content: center;
@@ -275,7 +278,7 @@ form {
     flex-direction: column;
     align-items: center;
   }
-  .individButtons{
+  .individButtons {
     margin: 25px;
   }
 }

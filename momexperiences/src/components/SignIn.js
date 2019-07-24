@@ -13,7 +13,8 @@ class SignIn extends React.Component {
       LoginVision: true,
       SignUpbuttonVis: true,
       login: "Login",
-      signUp: "Sign Up"
+      signUp: "Sign Up",
+      noLogo: true
     };
   }
   toggleLogin = () => {
@@ -51,7 +52,7 @@ class SignIn extends React.Component {
                   {this.state.login}
                 </Button>
                 <div className={`login ${LoginVis}`}>
-                  <LoginForm />
+                  <LoginForm noLogo={this.state.noLogo} />
                 </div>
               </div>
               <div className={`loginbuttonContainer ${SignUpbuttonVis}`}>
