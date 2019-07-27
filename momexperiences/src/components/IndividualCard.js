@@ -16,21 +16,6 @@ class IndividualCard extends React.Component {
 
   }
 
-
-  deleteEvent(e){
-    e.preventDefault();
-    const id = this.props.selectedCardData.id
-    this.props.deleteEvent(id)
-    this.props.history.push('/Homepage')
-  }
-
-  editEvent(e){
-    e.preventDefault();
-    const event = this.props.selectedCardData
-    this.props.editEvent(event)
-    this.props.history.push('/EditEvent')
-  }
-
   render() {
     return (
       <>
@@ -45,11 +30,6 @@ class IndividualCard extends React.Component {
               <Card.Text>Location: {this.props.selectedCardData.location}</Card.Text>
               <Card.Text>Created By: {this.props.selectedCardData.createdBy}</Card.Text>
               <Card.Text>Max Guests: {this.props.selectedCardData.maxGuests}</Card.Text>
-              <div className= 'individualCardButtons'> 
-              <Button onClick= {this.deleteEvent.bind(this)} className = 'individButtons' >Delete</Button>
-              <Button onClick= {this.editEvent.bind(this)} className = 'individButtons' >Edit</Button>
-              </div>
-              <small className="text-muted">Created on: {this.props.selectedCardData.createdAt}</small>
             </Card.Body>
           </Card> 
           

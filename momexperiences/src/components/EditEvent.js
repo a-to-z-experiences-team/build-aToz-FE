@@ -38,7 +38,7 @@ componentDidMount(){
       exp_desc: this.state.exp_desc,
       startsOn: this.state.startsOn
     })
-    this.props.history.push("/Homepage");
+    this.props.history.push("/Bookings");
   }
 
   handleChange = e => {
@@ -70,16 +70,6 @@ componentDidMount(){
                 placeholder="Location"
                 value={this.state.location}
                 name="location"
-                required
-              />
-            </Form.Group>
-            <Form.Group controlId="formGridLength">
-              <Form.Label>Created on </Form.Label>
-              <Form.Control
-                onChange={this.handleChange}
-                placeholder="Length of Event"
-                value={this.state.createdAt}
-                name="createdAt"
                 required
               />
             </Form.Group>
