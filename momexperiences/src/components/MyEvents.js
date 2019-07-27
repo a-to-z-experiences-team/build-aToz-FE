@@ -1,3 +1,4 @@
+
 import React from "react";
 import "../styles.css";
 import { Card, Button } from "react-bootstrap";
@@ -6,6 +7,7 @@ import {
   getEvent,
   getuserEvents,
   editEvent,
+  addSelectedData,
   experienceSuccessFetch,
   deleteEvent,
   updateArrays
@@ -28,18 +30,18 @@ class MyEvents extends React.Component {
     }
   }
 
-  deleteEvent = async e => {
+  deleteEvent = id => async (e) => {
     e.preventDefault();
-    const id = this.props.userEvents.id;
     await this.props.deleteEvent(id);
     this.props.history.push("/Homepage");
   };
 
-  editEvent(e) {
+  goEdit = event => async(e) => {
     e.preventDefault();
-    const event = this.props.userEvents;
-    this.props.editEvent(event);
-    this.props.history.push("/EditEvent");
+     this.props.editEvent(event.id);
+     this.props.addSelectedData(event)
+     await this.props.history.push("/EditEvent");
+    
   }
   render() {
     return (
@@ -59,13 +61,13 @@ class MyEvents extends React.Component {
                     <Card.Text>Max Guests: {event.maxGuests}</Card.Text>
                     <div className="individualCardButtons">
                       <Button
-                        onClick={this.deleteEvent.bind(this)}
+                        onClick={this.deleteEvent(event.id)}
                         className="individButtons"
                       >
                         Delete
                       </Button>
                       <Button
-                        onClick={this.editEvent.bind(this)}
+                        onClick={this.goEdit(event)}
                         className="individButtons"
                       >
                         Edit
@@ -100,6 +102,7 @@ export default withRouter(
       getEvent,
       editEvent,
       deleteEvent,
+      addSelectedData,
       updateArrays
     }
   )(MyEvents)

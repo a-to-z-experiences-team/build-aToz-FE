@@ -54,7 +54,6 @@ handleChange(e) {
 }
 
   render() {
-    console.log(this.props.momExperiences)
     return (
       <>
         <div className="viewAllContainer">
@@ -91,7 +90,6 @@ handleChange(e) {
 const mapStateToProps = state => ({
   momExperiences: state.momExperiences,
   selectedCardData: state.selectedCardData
-
 })
 export default withRouter(connect (
   mapStateToProps,

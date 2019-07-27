@@ -6,7 +6,7 @@ export const FETCH_MOM_EXPERIENCES_FAIL = "FETCH_MOM_EXPERIENCES_FAIL";
 export const experienceSuccessFetch = () => dispatch => {
   const headers =  {Authorization: localStorage.getItem('token')}
   axios
-    .get("https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/home", {headers} )
+    .get("https://webpt4-atoz-buildweek.herokuapp.com/api/atoz/home", {headers} )
     .then(res =>
       dispatch({ type: FETCH_MOM_EXPERIENCES_SUCCESS, payload: res.data })
     )
@@ -18,7 +18,7 @@ export const SEARCH_SUCCESS ='SEARCH_SUCCESS'
 export const SEARCH_FAIL = 'SEARCH_FAIL'
 
 export const searchExperiences = (search) => dispatch => {
-   axios.get("https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/home", search)
+   axios.get("https://webpt4-atoz-buildweek.herokuapp.com/api/atoz/home", search)
    .then(res => 
     dispatch({type: SEARCH_SUCCESS, payload: res.data})
     .catch(err => dispatch({type: SEARCH_FAIL, payload: err}))
@@ -40,7 +40,7 @@ export const login = credentials => dispatch => {
   dispatch({ type: LOGIN_START });
   localStorage.removeItem("token");
   return axios
-    .post("https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/auth/login", credentials)
+    .post("https://webpt4-atoz-buildweek.herokuapp.com/api/atoz/auth/login", credentials)
     .then(res => {
       localStorage.setItem("token", res.data.token);
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
@@ -60,7 +60,7 @@ export const ADD_EVENT = "ADD_EVENT";
 export const ADD_EVENT_FAIL = "ADD_EVENT_FAIL";
 
 export const getEvent = id => dispatch => {
-  const endpoint = `https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/experiences/${id}`
+  const endpoint = `https://webpt4-atoz-buildweek.herokuapp.com/api/atoz/experiences/${id}`
   const headers =  {Authorization: localStorage.getItem("token")}
   axios
     .get(endpoint, {headers})
@@ -70,10 +70,8 @@ export const getEvent = id => dispatch => {
 };
 
 export const postEvent = event =>  dispatch => {
-  console.log(event)
   const headers =  {Authorization: localStorage.getItem("token")}
-  console.log(headers)
-  const endpoint = 'https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/experience'
+  const endpoint = 'https://webpt4-atoz-buildweek.herokuapp.com/api/atoz/experience'
 
     axios
     .post(endpoint, event, {headers})
@@ -94,14 +92,13 @@ export const getSignUp = () => {
   return function(dispatch) {
     dispatch({ type: FETCHING_SIGNUP });
     promise.then(response => {
-      console.log(response);
       dispatch({ type: GET_SIGNUP, payload: response.data });
     });
   };
 };
 
 export const postSignUp = SignUp => dispatch =>{
-    axios.post("https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/auth/register", SignUp)
+    axios.post("https://webpt4-atoz-buildweek.herokuapp.com/api/atoz/auth/register", SignUp)
     .then(res => {
       dispatch({type: ADD_SIGNUP, payload: res.data });
     })
@@ -114,7 +111,7 @@ export const postSignUp = SignUp => dispatch =>{
   export const deleteEvent = id => dispatch => {
     const headers =  {Authorization: localStorage.getItem("token")}
     axios
-      .delete(`https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/exp/${id}`, {headers})
+      .delete(`https://webpt4-atoz-buildweek.herokuapp.com/api/atoz/exp/${id}`, {headers})
       .then(res =>{
         dispatch({type: DELETED_STATE, payload: res.data.allevents })
       })
@@ -126,7 +123,7 @@ export const postSignUp = SignUp => dispatch =>{
   export const updateArrays = () => dispatch => {
     const headers =  {authorization: localStorage.getItem('token')}
     axios
-      .get("https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/home", {headers} )
+      .get("https://webpt4-atoz-buildweek.herokuapp.com/api/atoz/home", {headers} )
       .then(res =>
         dispatch({ type: UPDATED_OBJECTS, payload: res.data })
       )
@@ -135,13 +132,13 @@ export const postSignUp = SignUp => dispatch =>{
   export const GET_SINGLE_EXPERIENCE = "GET_SINGLE_EXPERIENCE";
   export const GET_SINGLE_EXPERIENCE_FAIL = "GET_SINGLE_EXPERIENCE_FAIL";
 
-  export const editEvent = event => dispatch => {
+  export const editEvent = (id) => dispatch => {
     const headers =  {Authorization: localStorage.getItem("token")}
-    axios
-      .get(`https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/experience/${event.id}`, {headers})
+     axios
+      .get( `https://webpt4-atoz-buildweek.herokuapp.com/api/atoz/experiences/${id}`, {headers})
       .then(res =>{
         dispatch({type: GET_SINGLE_EXPERIENCE, payload: res.data })
-      })
+      }) 
       .catch(err => dispatch ({type: GET_SINGLE_EXPERIENCE_FAIL, payload: err}) )
   }
 
@@ -151,7 +148,7 @@ export const postSignUp = SignUp => dispatch =>{
   export const submittedEventChanges = event => dispatch => {
     const headers =  {Authorization: localStorage.getItem("token")}
     axios
-      .put(`https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/${event.id}/editexperience/`, event, {headers})
+      .put(`https://webpt4-atoz-buildweek.herokuapp.com/api/atoz/${event.id}/editexperience/`, event, {headers})
       .then(res =>{
         dispatch({type: EDIT_EVENT_SUCCESS, payload: event })
       })
@@ -165,13 +162,12 @@ export const postSignUp = SignUp => dispatch =>{
   export const getuser = id => dispatch => {
     const headers =  {Authorization: localStorage.getItem("token")}
     axios
-      .get(`https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/users/${id}/`, {headers})
+      .get(`https://webpt4-atoz-buildweek.herokuapp.com/api/atoz/users/${id}/`, {headers})
       .then(res =>{
         dispatch({type: GET_USER, payload: res.data })
       })
       .catch(err => dispatch ({type: GET_USER_FAIL, payload: err}) )
   }
-
 
   
   export const USER_EVENTS = "USER_EVENTS";
@@ -180,7 +176,7 @@ export const postSignUp = SignUp => dispatch =>{
   export const getuserEvents = id => dispatch => {
     const headers =  {Authorization: localStorage.getItem("token")}
     axios
-      .get(`https://webpt3-atoz-buildweek.herokuapp.com/api/atoz/experiencesby/${id}/`, {headers})
+      .get(`https://webpt4-atoz-buildweek.herokuapp.com/api/atoz/experiencesby/${id}/`, {headers})
       .then(res =>{
         dispatch({type: USER_EVENTS, payload: res.data })
       })
