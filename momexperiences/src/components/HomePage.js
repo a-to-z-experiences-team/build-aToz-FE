@@ -7,8 +7,8 @@ import FeaturedContent from './FeaturedContent';
 import NavBar from './NavBar';
 
 class HomePage extends React.Component {
-    async componentDidMount(){
-        await this.props.experienceSuccessFetch()
+    componentDidMount(){
+        this.props.experienceSuccessFetch()
     }
 
     state = {

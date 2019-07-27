@@ -73,11 +73,21 @@ class CreateEvent extends Component {
               <Form.Control
                 onChange={this.handleChange}
                 placeholder="Length of Event"
-                value={Date()}
+                value={this.state.createdAt}
                 name="createdAt"
                 required
               />
             </Form.Group>
+            {/* <Form.Group controlId="formGridAvailability">
+              <Form.Label>Availabilty</Form.Label>
+              <Form.Control
+                onChange={this.handleChange}
+                placeholder="Availability"
+                value={this.state.availability}
+                name="availability"
+                required
+              />
+            </Form.Group> */}
             <Form.Group controlId="formGridAvailability">
               <Form.Label>Date of Event</Form.Label>
               <Form.Control
