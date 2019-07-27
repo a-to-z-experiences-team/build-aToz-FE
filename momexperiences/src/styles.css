@@ -23,6 +23,81 @@
   justify-content: flex-end;
 }
 
+/* Landing Page CSS */
+.logoName {
+  text-decoration: none;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+.logoName:hover {
+  color: white;
+}
+
+.landingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.landingImg {
+  width: 100%;
+}
+
+.landingText {
+  top: 38%;
+  padding: 0px 50px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+  width: 500px;
+}
+.landingJoinButton {
+  text-decoration: none;
+  color: white;
+}
+
+.landingJoinButton:hover {
+  text-decoration: none;
+  color: white;
+}
+.buttons-landing {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+.secondSection {
+  background-color: #faf9f7;
+}
+
+.sectionExample {
+  display: flex;
+  justify-content: space-around;
+  padding: 25px;
+}
+.sectionTextContainer {
+  padding: 25px;
+  flex-wrap: wrap;
+  width: 60%;
+}
+.sectionTitle {
+  font-size: 40px;
+}
+.sectionText {
+  font-size: 30px;
+}
+.cardImgs {
+  height: 20em;
+}
+.protected {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
 .navButton {
   margin: 10px;
 }
@@ -31,10 +106,9 @@
   justify-content: center;
 }
 
-.loadBookingsButton{
+.loadBookingsButton {
   width: 300px;
   margin: 100px auto;
-
 }
 .buttonContainer {
   display: flex;
@@ -182,15 +256,15 @@ form {
   margin: 0 15px;
 }
 
-.myEventCards{
+.myEventCards {
   margin: 25px;
 }
-.loadButtonEventContainer{
+.loadButtonEventContainer {
   margin: 100px auto;
   display: flex;
   justify-content: center;
 }
-.loadButtonEvent{
+.loadButtonEvent {
   margin: 0 auto;
   width: 300px;
 }
@@ -215,6 +289,21 @@ form {
     background-color: none;
   }
 }
+
+@media only screen and (max-width: 970px) {
+  .landingText {
+    top: 25%;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .sectionExample {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 @media only screen and (max-width: 574px) {
   nav.navbarContent.navbar.navbar-expand {
     display: flex;
@@ -259,7 +348,7 @@ form {
     flex-direction: column;
     align-items: center;
   }
-  .individButtons{
+  .individButtons {
     margin: 25px;
   }
 }
