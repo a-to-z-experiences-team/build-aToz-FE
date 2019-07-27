@@ -95,7 +95,6 @@ handleChange(e) {
 }
 const mapStateToProps = state => ({
   momExperiences: state.momExperiences
-  momExperiences: state.momExperiences,
 
 })
 export default connect (
