@@ -11,24 +11,19 @@ class SignIn extends React.Component {
       showComponent: false,
       showSignUpComponent: false,
       LoginVision: true,
-      SignUpbuttonVis: true,
-      login: "Login",
-      signUp: "Sign Up",
-      noLogo: true
+      SignUpbuttonVis: true
     };
   }
   toggleLogin = () => {
     this.setState({
       showLoginComponent: !this.state.showLoginComponent,
-      SignUpbuttonVis: !this.state.SignUpbuttonVis,
-      login: this.state.showLoginComponent ? "Login" : "Go Back"
+      SignUpbuttonVis: !this.state.SignUpbuttonVis
     });
   };
   toggleSignUp = () => {
     this.setState({
       showSignUpComponent: !this.state.showSignUpComponent,
-      LoginVision: !this.state.LoginVision,
-      signUp: this.state.showSignUpComponent ? "Sign Up" : "Go Back"
+      LoginVision: !this.state.LoginVision
     });
   };
 
@@ -49,15 +44,15 @@ class SignIn extends React.Component {
             <div className="App">
               <div className={`loginbuttonContainer ${LoginbuttonVis}`}>
                 <Button onClick={this.toggleLogin} className="signinButton">
-                  {this.state.login}
+                  Login
                 </Button>
                 <div className={`login ${LoginVis}`}>
-                  <LoginForm noLogo={this.state.noLogo} />
+                  <LoginForm />
                 </div>
               </div>
               <div className={`loginbuttonContainer ${SignUpbuttonVis}`}>
                 <Button onClick={this.toggleSignUp} className="signinButton">
-                  {this.state.signUp}
+                  SignUp
                 </Button>
                 <div className={`login ${SignUpVis}`}>
                   <SignUpForm />
