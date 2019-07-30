@@ -38,7 +38,7 @@ componentDidMount(){
       exp_desc: this.state.exp_desc,
       startsOn: this.state.startsOn
     })
-    this.props.history.push("/Bookings");
+    this.props.history.push("/Homepage");
   }
 
   handleChange = e => {
