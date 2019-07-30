@@ -40,7 +40,7 @@ class MyEvents extends React.Component {
     e.preventDefault();
      this.props.editEvent(event.id);
      this.props.addSelectedData(event)
-     await this.props.history.push("/Homepage");
+     await this.props.history.push("/EditEvent");
     
   }
   render() {
